@@ -1,0 +1,58 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TITRE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\title{Unification and logarithmic space}
+\author{Clément Aubert \& Marc Bagnol}
+\institute{Institut de Mathématiques de Marseille}
+%\date{}
+
+\maketitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TABLE
+
+
+%\tableofcontents\thispagestyle{empty}
+
+
+%%%%%%%%%%%% CHAPTERS and SECTIONS
+
+\begin{abstract}
+	We present an algebraic characterization of the complexity classes L and NL of deterministic and non-deterministic logarithmic space, using an algebra with a composition law based on unification. We show that computation can be modeled in it by means of specific subalgebras related to groups of finite permutations.
+
+We also show that the construction can be related with a notion pointer machines, a model of logarithmic space computation.
+\end{abstract}
+
+
+\section*{Introduction}
+\input{introduction}
+
+\section{The unification algebra}\label{sec:unification}
+	\subsection{Unification}
+	\input{unification}
+	\subsection{Flows and wirings}
+	\input{flows}
+	\subsection{Permutations and tensor product}\label{permutation}
+	\input{permutations}
+
+\section{Words and observations}\label{sec:words}
+%	\subsection{Representation of words}
+	\input{words}
+	\input{observations}
+	
+\section{Normativity}\label{sec:normativity}
+	\input{normativity}
+
+\section{Logarithmic space}\label{sec:logspace}
+	\subsection{Soundness}
+	\input{soundness}
+	\subsection{Pointer machines and completeness}
+	\input{pointer}
+
+\section*{Discussion}
+\input{conclusion}
+
+
+\bibliographystyle{plain}
+\bibliography{girard,complexity,phd,unification,goi}\thispagestyle{empty}

@@ -1,0 +1,99 @@
+We now use the notions we just saw to build an algebra with a product based on unification. Let us start with a monoid with a partially defined product, that is the basis of the construction.
+
+\define[flows]
+	{\label{def:flow}A flow is an oriented pair written $\,t\flow u\,$ of terms such that $\,\var(t)=\var(u)\,$.
+	
+%	\smallskip
+	Flows are considered up to renaming: for any variable renaming $\,\alpha\,$ we have $\,t\flow u\,=\,t.\alpha\flow u.\alpha\,$.
+	
+%	\smallskip
+	We will write $\,\flows\,$ the set of (equivalence classes of) flows.% and $\,\flows_\bot\,$ the set $\,\flows\cup \{\,\bot\,\}\,$.
+	
+%	\smallskip
+	We set $\,(t\flow u)^\dagger:=u\flow t\,$% and $\,\bot^\dagger:=\bot\,$ 
+	so that $\,(.)^\dagger\,$ is an involution $\,\flows\,$. % and $\,\flows_\bot\,$.
+	
+%	\smallskip
+	Finally, define $\,1:=x\flow x\,$.
+	}
+
+A flow $\,u\flow v\,$ can be thought of as a \texttt{ `match ... with v -> u' } in a ML-style language. The composition of flows follows intuition.
+
+\define[product of flows]
+	{Let $\,u\flow v\in \flows\,$ and $\,t\flow w\in \flows\,$. Suppose we have chosen two representatives of the renaming classes such that their sets of variables are disjoint.
+
+%\smallskip
+The product of $\,u\flow v\,$ and $\,t\flow w\,$ is defined if $\,v,t\,$ are unifiable with MGU $\,\theta\,$ and in that case
+$$l_1\,l_2:=\:u.\theta \flow w.\theta$$
+}
+
+\define[action on closed terms]
+	{\label{flow-action}If $\,t\in \closed\,$ is a closed term, $\,(u\flow v)(t)\,$ is defined whenever $\,t\,$ and $\,v\,$ are unifiable, with MGU $\,\theta\,$, in that case $\,(u\flow v)(t):=u.\theta\,$
+}
+
+\remark{The condition on variables ensures that the result is a closed term (because \hbox{$\,\var(u)\subseteq\var(v)\,$}) and that the action is injective on the its domain of definition (because \hbox{$\,\var(v)\subseteq\var(u)\,$}).
+
+Moreover, the action is compatible with the product of flows: $\,l(k(t))=(l\,k)(t)\,$ and both sides are defined at the same time.
+}
+
+\medskip
+By adding a formal element $\,\bot\,$ to the set of flows, one could turn their product in a completely defined operation, making $\,\C F\,$ an \emph{inverse monoid}. However, we will need to consider the algebra of \emph{sums} of flows that is easily defined directly from the partially defined product.
+
+
+\define[wirings]
+	{We call \emph{wirings} $\BB C$-linear combinations (formally: the set of almost-everywhere null functions from $\,\flows\,$ to $\,\BB C\,$) of elements of $\,\flows\,$, endowed with:
+	$$\bigg(\sum_i \lambda_i\,l_i\bigg) \bigg(\sum_j \mu_j\,k_j\bigg):=
+		\:\sum_{\substack{i,j \,\text{ such that} \\ (l_ik_j)\,\text{is defined}}}\!\!\lambda_i\mu_j(l_i\,k_j)$$
+		$$\text{and}\qquad
+		\bigg(\sum_i \lambda_i\,l_i\bigg)^\dagger:=\:\sum_i \,\overline\lambda_i\,l_i^\dagger
+	$$
+	
+	We write $\,\ualg\,$ the set of wirings and refer to it as the \emph{unification algebra}.
+}
+
+\remark{$\ualg\,$ is indeed a unital $\ast$-algebra: the only delicate point would be the associativity of the product, which is a consequence of lemma \ref{part-unif}.}
+
+\define[partial isometries and orthogonal projections]
+	{\label{piso}A \emph{partial isometry} is a wiring satisfying $\,uu^\dagger u=u\,$.% We write $\,\partialisos\,$ the set of \emph{concrete} partial isometries. 
+
+An \emph{orthogonal projection} is a wiring satisfying $\,u^2=u\,$ and $\,u^\dagger=u\,$.
+}
+
+
+\smallskip
+While $\,\ualg\,$ offers the algebraic backround to work in, we will need to consider particuliar kind of wirings to study computation.
+
+\define[concrete and isometric wirings]
+{A wiring is \emph{concrete} whenever it is a sum of flows with all coefficients equal to~$\,1\,$.
+
+An \emph{isometric wiring} is a concrete wiring that is also a partial isometry.
+
+\smallskip
+Given a set of wirings $\,E\,$ we will write $\,E^+\,$ the set of concrete wirings of $\,E\,$.
+}
+
+Isometric wirings enjoy a direct characterisation.
+
+\theorem[isometric wirings]
+{The isometric wirings are exactly the wirings of the form
+	$\,\sum_i \, u_i \flow t_i\,$
+	with the $\,u_i\,$ pairwise disjoint (definition \ref{disjoint}) and the $\,t_i\,$ pairwise disjoint.
+}
+
+It will be useful to consider the action of wirings on closed terms. for this purpose we extend definition \ref{flow-action} to wirings.
+
+\define[action on closed terms]
+	{Let $\,\closedh\,$ be the free vector space over $\,\closed\,$.
+	
+%	\smallskip
+	Wirings act on base vectors of $\,\closedh\,$ the following way
+	$$\bigg(\sum_i \lambda_i\,l_i\bigg)(t) :=\!\sum_{\substack{i \,\text{ such that} \\ l_i(t)\,\text{ is defined}}}\!\!\lambda_i \big(l_i(t)\big) \ \ \in\: \closedh
+	$$ which
+	 extends by linearity into an action on the whole $\,\closedh\,$.
+}
+
+Note that isometric wirings have a particular behaviour in terms of this action.
+
+\lemma[isometric action]
+{Let $\,F\,$ be a isometric wiring and $\,t\,$ a closed term. We have that $\,F(t)\,$ and $\,F^\dagger(t)\,$ are either $\,0\,$ or another closed term $\,t'\,$ (seen as an element of $\,\closedh\,$).}
+
