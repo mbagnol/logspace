@@ -1,0 +1,17 @@
+* Mettre en avant la L.L. au lieu de déprécier (no knowledge is …)(l. 2 words.tex)
+* Soundness, ligne 57, préciser les tailles des constantes C et L ?
+* Soundness, ajouter un mot à la fin pour dire la correspondance entre unification qui « progresse » et étapes de calcul ?
+* Conf. ne dépends pas de l’entrée.
+* Plus de complexité / unification dans l’intro.
+* Parler de weak unification ?
+* Revoir les paragraphes qui suivent le lemme 8. Not. pour dire « on va calculer avec ». Vérifier biblio.
+* Note de bas de page pour taille d’un terme / d’un mot / d’une entrée ?
+* Insister sur l’innovation en règle général.
+* Flows, ligne 13, « so that $\,(.)^\dagger\,$ is an involution $\,\flows\,$. », il manque un « over », non ?
+* Noter ensemble d’appartenance des termes dans la définition de wiring, l.42 ? Introduire les ensembles de permutations, $\F S_n$ ? Définir conjugué-transposé ?
+* permutations, l.9, « Two important features of $\,\ualg\,$ » ajouter « of the unification algebra $\,\ualg\,$ ».
+* Permutations, l. 54, expliquer le rôle futur de ce y. Expliquer le jeu sur la cardinalité et le produit tensoriel infini.
+* Revoir réf. pointeur machine, indiquer que d sert à marquer la direction, l’entrée / sortie, dire que le rejet = ne pas accepter, détailler / donner réf. / reformuler le « It turns out that pointer machines are expressive enough to solve any \textsc{(N)Logspace} problem », appartenance à une classe de complexité pas déf.
+* Conclusion généralement à revoir (« in the relation to pointer machines » : « to mimic computation » ?)
+* Revoir la biblio
+* Citer unification as a complexity measure for logic …, 3 lightings of logic.

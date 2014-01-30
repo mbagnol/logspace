@@ -56,7 +56,8 @@ Of course, this rather unusual acceptance condition is given with the acceptance
 
 \define[machines and wirings]
 {Let $\,M=(N,\TT S,\Delta)\,$ be a pointer machine.
-We associate to the $\,s\in \TT S\,$ a set of distinct closed terms $\,[\TT S]\,$. We write $\,[s]\,$ the term associated to $\,s\,$.
+We associate to the $\,s\in \TT S\,$ a set of distinct closed terms $\,[\TT S]\,$.
+We write $\,[s]\,$ the term associated to $\,s\,$.
 
 To any element $\,D=(s,\TT c,\TT d) \rightarrow (s',\TT c',\TT d') \times \sigma\,$ of $\,\Delta\,$ we associate the flow 
 \[[D]:=([s']\p\TT c'\p\TT d' \flow [s]\p\TT c\p\TT d) \tensor \sigma \:\in[\TT S]\tensor\Sigma\tensor\IO\tensor\C S_n\,\]
@@ -71,7 +72,6 @@ This translation preserves the language recognized and relates reversibility wit
 
 \theorem[acceptation]
 {For any pointer machine $\,M\,$, $\,\lang(M)=\lang([M])\,$.}
-
 
 It turns out that pointer machines are expressive enough to solve any \textsc{(N)Logspace} problem, we get the result we aim at.
 
