@@ -9,7 +9,7 @@ Specifically, we will be interested in the following problem:
 	\it Given two (first-order) terms,\\ can they be “made equal” by replacing their variables?
 \end{center}
 
-To make more things concrete, we set a specific set of terms for the rest of this article.
+To make things more concrete, we set a specific set of terms for the rest of this article.
 
 
 \define[terms]
@@ -23,13 +23,13 @@ To make more things concrete, we set a specific set of terms for the rest of thi
 For any $\,t\in\terms\,$, we will write $\,\var(t)\,$ the set of variables occuring in $\,t\,$. We say that a term is closed whenever $\,\var(t)=\varnothing\,$, and denote the set of closed terms as $\,\closed\,$. 
 }
 
-\notation{We will write the binary function symbol as \emph{right associating} to avoid an excess of parenthesis: $$\,t\p u\p v \::=\:t\p(u\p v) \,$$}
+\notation{We will write the binary function symbol as \emph{right associating} to avoid an excess of parenthesis: $\:t\p u\p v \::=\:t\p(u\p v) \,$}
 %We also leave the $\,\p\,$ implicit $\,\TT c\p u\,$, so that: $\,\TT{lrc}\p\TT{llc}:=(\TT l \p\TT r \p\TT c)\p \TT l \p\TT l \p\TT c=(\TT l \p(\TT r \p\TT c))\p (\TT l \p(\TT l \p\TT c))\,$}
 
 %Variables in terms are meant to be replaced when needed by a term of the language. This is implemented by the notion of substitution.
 
 \define[substitution]
-	{A substitution if a map $\,\theta:\:\vars \rightarrow \terms\,$ such that the set $\,\dom(\theta):=\{\:v\in \vars\:|\:\theta(v)\not=v\:\}\,$ (the \emph{domain} of $\,\theta\,$) is finite. A substitution with domain $\,\{\:x_1,\dots,x_n\:\}\,$ such that $\;\theta(x_1)=u_1\,,\,\dots\,,\,\theta(x_n)=u_n\;$ can therefore be written as $\,\{\:x_1\mapsto u_1\,;\,\dots\,;\, x_n\mapsto u_n\:\}\,$.
+	{A substitution if a map $\,\theta:\:\vars \rightarrow \terms\,$ such that the set $\,\dom(\theta):=\{\:v\in \vars\:|\:\theta(v)\not=v\:\}\,$ (the \emph{domain} of $\,\theta\,$) is finite. A substitution with domain $\,\{\,x_1,\dots,x_n\,\}\,$ such that $\,\theta(x_1)=u_1\,,\,\dots\,,\,\theta(x_n)=u_n\,$ will be written as $\,\{\:x_1\mapsto u_1\,;\,\dots\,;\, x_n\mapsto u_n\:\}\,$.
 
 \smallskip
 	If $\,t\in \terms\,$ is a term we write $\,t.\theta\,$ the term $\,t\,$ where any occurence of any variable $\,x\,$ has been replaced by $\,\theta(x)\,$.
@@ -39,7 +39,7 @@ For any $\,t\in\terms\,$, we will write $\,\var(t)\,$ the set of variables occur
 $$\theta;\psi\::=\: 
 	\{\:x_i\mapsto u_i.\psi\:\} \:\cup\:
 	\{\:y_i\mapsto v_i \:|\;y_i \not\in \dom(\theta)\:\}$$
-\vspace{-5mm}
+\vspace{-7mm}
 }
 
 \remark{The composition of substitutions is such that $\,t.(\theta;\psi)=(t.\theta).\psi\,$ holds.}
@@ -53,14 +53,14 @@ $$\theta;\psi\::=\:
 
 \smallskip A substitution $\,\psi\,$ is an \emph{instance} of $\,\theta\,$ if there exists a substitution $\,\sigma\,$ such that $\,\psi=\theta;\sigma\,$.
 
-\smallskip A substitution $\,\theta\,$ is \emph{idempotent} if $\,\theta;\theta=\theta\,$.
+%\smallskip A substitution $\,\theta\,$ is \emph{idempotent} if $\,\theta;\theta=\theta\,$.
 }
 
 \theorem%[folklore]
 	{\label{folklore}The following properties hold for any substitutions $\,\theta,\psi\,$:
 	\begin{itemize}%[parsep=0pt]
 		\item The only invertible substitutions are renamings.
-		\item Every substitution is equal up to renaming to an idempotent substitution.
+%		\item Every substitution is equal up to renaming to an idempotent substitution.
 		\item If $\,\theta\,$ is an instance of $\,\psi\,$ and $\,\psi\,$ is an instance of $\,\theta\,$, then they are equal up to renaming.
 	\end{itemize}
 }
