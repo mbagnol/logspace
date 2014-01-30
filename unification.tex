@@ -72,15 +72,13 @@ To allow easier manipulation, the problem of unifying \emph{two} terms needs to 
 \define[unification]
 	{A \emph{unification problem} is finite set of pair of terms $\,P=\{\:t_i\uequ u_i\:\}\,$.
 	
-	It is said to be unifiable if it has a \emph{unifier}: a substitution $\,\theta\,$ such that 
+	It is said to be unifiable if it has a \emph{unifier}: a substitution $\,\theta\,$ such that
 	$$u_i.\theta=t_i.\theta\ \text{ for all }\,i$$
-	$\theta\,$ is a \emph{most general unifier (MGU) of $\,P\,$} if any other unifier of $\,P\,$ is an instance of~$\,\theta\,$.
-	
-	\smallskip
-	In particular, we say that two terms $\,t,u\,$ are \emph{unifiable} if there exists a substitution $\,\theta\,$ such that
-	$$t.\theta=u.\theta$$
-	\vspace{-5mm}
+		In particular, we say that two terms $\,t,u\,$ are \emph{unifiable} if there exists a substitution $\,\theta\,$ such that $\,t.\theta=u.\theta\,$.
+		
+	$\theta\,$ is a \emph{most general unifier (MGU) of $\,P\,$} if any other unifier is an instance of~$\,\theta\,$.
 }
+\vspace{-5mm}
 
 \remark{It follows from proposition \ref{folklore} that any two MGU of the same unification problem are equal up to renaming.}
 
@@ -106,10 +104,10 @@ The crucial feature of first-order unification is the (decidable) existence of m
 Wether two terms are unifiable and, in case they are, finding a MGU is decidable.}
 
 
-We can determine if a unification problem has a solution. We note the following fact, that will be useful in the next section: solving a unification problem can be done incrementally.
+Let us note the following fact, that will be useful in the next section: solving a unification problem can be done incrementally.
 
 \smallskip
-\notation{If $\,P=\{\:t_i\uequ u_i\:\}\,$ is a unification problem and $\,\theta\,$ a substitution, we write $$\,P.\theta:=\{\:t_i.\theta\uequ u_i.\theta\:\}\,$$}
+\notation{If $\,P=\{\:t_i\uequ u_i\:\}\,$ is a unification problem and $\,\theta\,$ a substitution, we write $\,P.\theta:=\{\:t_i.\theta\,\uequ\, u_i.\theta\:\}\,$.}
 
 \lemma[partial unification]
 	{\label{part-unif}Let $\,P=Q\uplus R\,$ ($\,\uplus\,$ denotes disjoint union) be a unification problem. The following statements are equivalent:
@@ -127,11 +125,10 @@ In that case, we have moreover that $\,\theta;\psi\,$ is a MGU of $\,P\,$.
 
 %Herbrand's original procedure for solving unification was non-deterministic.
 
-J.~A.~Robinson was the first to prove the existence of MGU for two unifiable terms and derived from this a deterministic unification procedure.%, basically the one we presented in the previous sub-section. 
-His procedure is however quite inefficient, with potential exponential blowups in some cases. 
+J.~A.~Robinson was the first to prove the existence of MGU for two unifiable terms and derived from this a deterministic unification procedure. His original procedure was however quite inefficient, with potential exponential blowups in some cases. 
 
 \smallskip
-It turns out that the general unification problem can be solved in linear time, which was discovered independently in \cite{paterson_linear_1978} and \cite{martelli_unification_1976}, improving on the almost-linear algorithm thus far designed.
+It turns out that the general unification problem can be solved in linear time, which was discovered independently in \cite{paterson_linear_1978} and \cite{martelli_unification_1976}, improving on the almost-linear algorithms thus far designed.
 
 \smallskip
 Unification was first thought to be a \textsc{NLogspace}-complete problem. However, an error was eventually found in the note \cite{lewis_unifiability_1982} claiming this fact, which eventually led to a determination of the intrinsic complexity of the problem: unification is indeed \textsc{Ptime}-complete under logarithmic space reductions \cite{dwork_sequential_1984}.
@@ -146,5 +143,5 @@ In this article, we are concerned with a very much simpler case of the problem: 
 Moreover, their MGU is of size at most the sum of the sizes of $\,t\,$ and $\,u\,$.
 }
 
-Actually, the lemma in the article states that the problem is in \textsc{NC}\up 1, a complexity class of parallel computations known to be included in \textsc{Logspace}.
+The lemma in the article actually states that the problem is in \textsc{NC}\up 1, a complexity class of parallel computations known to be included in \textsc{Logspace}.
 

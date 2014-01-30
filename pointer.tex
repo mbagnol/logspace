@@ -39,7 +39,7 @@ such that
 \end{itemize}
 }
 
-Note that the maintenance of $\,\TT c''\,$ as the letter pointed to by the (new) main pointer is not required at the \texttt{SWAP} phase, which will cause most computation to stop unexpectedly. The point is that it is possible to implement that maintainance using the states of the machine (typically, add a store of the values of the pointers to the state of the machine, which has finitely many configurations), and therefore we favor the simpler and more liberal definition.
+Note that the maintenance of $\,\TT c''\,$ as the letter pointed to by the (new) main pointer is not required at the \texttt{SWAP} phase, which will cause most computation to stop unexpectedly. The point is that it is possible to implement that maintainance using the states of the machine (typically, add a store for the values of the pointers, which has finitely many configurations, to the state of the machine), and therefore we favor the simpler and more liberal definition.
 
 \define[acceptation]
 {\label{translate}We say that a pointer machine $\,M\,$ accepts the word $\,w\,$ if any sequence of transitions $\,\big(C_i\trans{\TT{MOVE}}{}C_i'\trans{\TT{SWAP}}{}C_i''\big)\,$ of $\,(w,M)\,$ such that $\,C''_i=C_{i+1}\,$ for all $\,i\,$ is necessarily finite.
@@ -57,7 +57,7 @@ and we define the wiring $\,[M]\in\C O_\Sigma^+\,$ as
 $\,\displaystyle\sum_{D\in \Delta} [D]\,$.
 }
 
-The translation of definition \ref{translate} preserves the language recognized and relates reversibility with isometricity.
+This translation preserves the language recognized and relates reversibility with isometricity.
 
 \theorem[reversibility]
 {A pointer machine $\,M\,$ is reversible if and only if $\,[M]\,$ is an isometric wiring.}
@@ -67,10 +67,11 @@ The translation of definition \ref{translate} preserves the language recognized 
 
 
 
-As pointer machines are expressive enough to solve any \textsc{(N)Logspace} problem, we get the result we aim at.
+It turns out that pointer machines are expressive enough to solve any \textsc{(N)Logspace} problem, we get the result we aim at.
 
 \theorem[space completeness]
 {If $\,L\in \text{\sc NLogspace}\,$, then there exist a pointer machine $\,M\,$ such that $\,\lang(M)=L\,$. Moreover, if $\,L\in \text{\sc Logspace}\,$ then $\,M\,$ can be chosen to be reversible.
 }
 
+\proof{The proof of this fact is a matter of encoding, along the lines of the corresponding proofs in \cite{aubert_characterizing_2012,seiller_logarithmic_2013}.}
 

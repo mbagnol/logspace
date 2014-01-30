@@ -4,27 +4,23 @@ We now use the notions we just saw to build an algebra with a product based on u
 	{\label{def:flow}A flow is an oriented pair written $\,t\flow u\,$ of terms such that $\,\var(t)=\var(u)\,$.
 	
 %	\smallskip
-	Flows are considered up to renaming: for any variable renaming $\,\alpha\,$ we have $\,t\flow u\,=\,t.\alpha\flow u.\alpha\,$.
+	Flows are considered up to renaming: for any renaming $\,\alpha\,$ we have $\,t\flow u\,=\,t.\alpha\flow u.\alpha\,$.
 	
 %	\smallskip
-	We will write $\,\flows\,$ the set of (equivalence classes of) flows.% and $\,\flows_\bot\,$ the set $\,\flows\cup \{\,\bot\,\}\,$.
+	We will write $\,\flows\,$ the set of (equivalence classes of) flows.
 	
-%	\smallskip
-	We set $\,(t\flow u)^\dagger:=u\flow t\,$% and $\,\bot^\dagger:=\bot\,$ 
-	so that $\,(.)^\dagger\,$ is an involution $\,\flows\,$. % and $\,\flows_\bot\,$.
-	
-%	\smallskip
-	Finally, define $\,1:=x\flow x\,$.
+	We set $\,1:=x\flow x\,$ and $\,(t\flow u)^\dagger:=u\flow t\,$ so that $\,(.)^\dagger\,$ is an involution $\,\flows\,$.
 	}
 
-A flow $\,u\flow v\,$ can be thought of as a \texttt{ `match ... with v -> u' } in a ML-style language. The composition of flows follows intuition.
+A flow $\,t\flow u\,$ can be thought of as a \texttt{ `match ... with u -> t' } in a ML-style language. The composition of flows follows intuition.
 
 \define[product of flows]
 	{Let $\,u\flow v\in \flows\,$ and $\,t\flow w\in \flows\,$. Suppose we have chosen two representatives of the renaming classes such that their sets of variables are disjoint.
 
 %\smallskip
 The product of $\,u\flow v\,$ and $\,t\flow w\,$ is defined if $\,v,t\,$ are unifiable with MGU $\,\theta\,$ and in that case
-$$l_1\,l_2:=\:u.\theta \flow w.\theta$$
+$$(u\flow v)(t\flow w)\,:=\:u.\theta \flow w.\theta$$
+\vspace{-5mm}
 }
 
 \define[action on closed terms]
@@ -37,7 +33,7 @@ Moreover, the action is compatible with the product of flows: $\,l(k(t))=(l\,k)(
 }
 
 \medskip
-By adding a formal element $\,\bot\,$ to the set of flows, one could turn their product in a completely defined operation, making $\,\C F\,$ an \emph{inverse monoid}. However, we will need to consider the algebra of \emph{sums} of flows that is easily defined directly from the partially defined product.
+By adding a formal element $\,\bot\,$ (representing the failure of unification) to the set of flows, one could turn their product in a completely defined operation, making $\,\C F\,$ an \emph{inverse monoid}. However, we will need to consider the algebra of \emph{sums} of flows that is easily defined directly from the partially defined product.
 
 
 \define[wirings]
@@ -54,9 +50,9 @@ By adding a formal element $\,\bot\,$ to the set of flows, one could turn their 
 \remark{$\ualg\,$ is indeed a unital $\ast$-algebra: the only delicate point would be the associativity of the product, which is a consequence of lemma \ref{part-unif}.}
 
 \define[partial isometries and orthogonal projections]
-	{\label{piso}A \emph{partial isometry} is a wiring satisfying $\,UU^\dagger U=U\,$.% We write $\,\partialisos\,$ the set of \emph{concrete} partial isometries. 
+	{\label{piso}A \emph{partial isometry} is a wiring $\,U\,$ satisfying $\,UU^\dagger U=U\,$.% We write $\,\partialisos\,$ the set of \emph{concrete} partial isometries. 
 
-An \emph{orthogonal projection} is a wiring satisfying $\,U^2=U\,$ and $\,U^\dagger=U\,$.
+An \emph{orthogonal projection} is a wiring $\,U\,$ satisfying $\,U^2=U\,$ and $\,U^\dagger=U\,$.
 }
 
 
@@ -80,10 +76,10 @@ Isometric wirings enjoy a direct characterisation.
 	with the $\,u_i\,$ pairwise disjoint (definition \ref{disjoint}) and the $\,t_i\,$ pairwise disjoint.
 }
 
-It will be useful to consider the action of wirings on closed terms. for this purpose we extend definition \ref{flow-action} to wirings.
+It will be useful to consider the action of wirings on closed terms. For this purpose we extend definition \ref{flow-action} to wirings.
 
 \define[action on closed terms]
-	{Let $\,\closedh\,$ be the free vector space over $\,\closed\,$.
+	{Let $\,\closedh\,$ be the free $\BB C$-vector space over $\,\closed\,$.
 	
 %	\smallskip
 	Wirings act on base vectors of $\,\closedh\,$ the following way
@@ -95,5 +91,5 @@ It will be useful to consider the action of wirings on closed terms. for this pu
 Note that isometric wirings have a particular behaviour in terms of this action.
 
 \lemma[isometric action]
-{Let $\,F\,$ be a isometric wiring and $\,t\,$ a closed term. We have that $\,F(t)\,$ and $\,F^\dagger(t)\,$ are either $\,0\,$ or another closed term $\,t'\,$ (seen as an element of $\,\closedh\,$).}
+{\label{lem:isom}Let $\,F\,$ be a isometric wiring and $\,t\,$ a closed term. We have that $\,F(t)\,$ and $\,F^\dagger(t)\,$ are either $\,0\,$ or another closed term $\,t'\,$ (seen as an element of $\,\closedh\,$).}
 
