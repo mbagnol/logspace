@@ -1,22 +1,21 @@
-The representation of words over an alphabet in the unification algebra directly comes from the translation of church lists in linear logic and their interpretation in Geometry of Interaction models~\cite{girard_geometry_1989,girard_geometry_1995}. However, no knowledge of these topics is strictly needed and we can give a direct presentation of the notion.
-
+The representation of words over an alphabet in the unification algebra directly comes from the translation of church lists in linear logic and their interpretation in Geometry of Interaction models~\cite{girard_geometry_1989,girard_geometry_1995}.
+However, no knowledge of these topics is strictly needed and we can give a direct presentation of the notion.
 \medskip
 From now on, we fix a set of two disinguished constant symbols $\,\IO:=\{\:\o,\i\:\}\,$.
 
-
 \define[word algebra]
 	{To a finite set $\,\Sigma\,$ of constant symbols, we associate the $\ast$-algebra
-	$$[\Sigma]:= \vect\set{\TT c\flow \TT d}{\TT c,\TT d\in\Sigma}
-	$$
+	\[[\Sigma]:= \vect\set{\TT c\flow \TT d}{\TT c,\TT d\in\Sigma}\]
 	When it is clear from the context, we will simply write $\,\Sigma\,$ in place of $\,[\Sigma]\,$.
 	
 	\smallskip
 	The \emph{word algebra} associated to $\,\Sigma\,$ is the $\ast$-algebra defined as 
-	$$\,\C W_\Sigma:=\BF 1\tensor\Sigma\tensor\IO\tensor(\closed)^1\,$$
+	\[\,\C W_\Sigma:=\BF 1\tensor\Sigma\tensor\IO\tensor(\closed)^1\,\]
 	\vspace{-8mm}
 }
 
-The words we consider are cyclic, with a begin/end marker $\,\start\,$, a reserved constant symbol. for example the word $\,\TT{0010}\,$ is to be thought of as $\,\start\TT{0010}=\TT{01}\!\start\!\TT{00}=\TT0\!\start\!\TT{001}=\cdots\,$
+The words we consider are cyclic, with a begin/end marker $\,\start\,$, a reserved constant symbol.
+For example the word $\,\TT{0010}\,$ is to be thought of as $\,\start\TT{0010}=\TT{01}\!\start\!\TT{00}=\TT0\!\start\!\TT{001}=\cdots\,$.
 
 We consider therefore from now on that the alphabet $\,\Sigma\,$ always contains the symbol $\,\start\,$.
 
@@ -24,14 +23,13 @@ We consider therefore from now on that the alphabet $\,\Sigma\,$ always contains
 	{\label{words}Let $\,W=\start\TT c_1\dots \TT c_n\,$ be a word over $\,\Sigma\,$.
 	
 	A \emph{representation} $\,W(t_0,t_1,\dots,t_n)\in \C W_\Sigma^\concrete\,$ of $\,W\,$ is an isometric wiring determined by the distinct closed terms $\,t_0,t_1,\dots,t_n\,$, defined as
-$$
+\[
 	\begin{array}{ccl}
 		W(t_0,t_1,\dots,t_n) :=		& &x\p\start\p\i\p (t_0\p y) \sflow x\p\TT c_1\p\o\p (t_1\p y) \\
 				&+& x\p\TT c_1\p\i\p (t_1\p y) \sflow x\p\TT c_2\p\o\p (t_2\p y) \\
 				&+&\ \cdots\ \\
 				&+& x\p\TT c_n\p\i\p (t_n\p y) \sflow x\p\start\p\o\p (t_0\p y)
 	\end{array}
-$$
+\]
 \vspace{-5mm}
 }
-

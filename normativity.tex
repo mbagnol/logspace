@@ -1,4 +1,5 @@
-We are going to define the way observations accept and reject words. Indeed there is an issue with the notion of representation: an observation is an element of $\,\ualg\,$ and can therefore only interact with \emph{representations} of a word, and there are many possible representation of the same word (in definition \ref{words}, different choices of closed terms lead to different representations).
+We are going to define the way observations accept and reject words.
+Indeed there is an issue with the notion of representation: an observation is an element of $\,\ualg\,$ and can therefore only interact with \emph{representations} of a word, and there are many possible representation of the same word (in definition \ref{words}, different choices of closed terms lead to different representations).
 
 Therefore one has to ensure that acceptation or rejection is independent of the representation, so that the construction makes sense.
 
@@ -23,7 +24,7 @@ The two following theorems set the basis for a notion of acceptation/rejection i
 %\notation{Given a finite set of closed terms $\,S\,$, we write $\,\displaystyle1_S:=\sum_{\TT s\in S} s \flow s\,$.}
 
 \theorem[automorphic representations]
-	{\label{automorphic}Any two representations $\,W(t_i),W(u_i)\,$ of a word $\,W\,$ over $\,\Sigma\,$ are automorphic: there exists an automorphism $\,\varphi\,$ of $\,(\closed)^1\,$ such that $$\,(\Id_{\,\BF 1\tensor\Sigma\tensor\IO}\tensor\varphi)\big(W(t_i)\big)=W(u_i)\,$$
+	{\label{automorphic}Any two representations $\,W(t_i),W(u_i)\,$ of a word $\,W\,$ over $\,\Sigma\,$ are automorphic: there exists an automorphism $\,\varphi\,$ of $\,(\closed)^1\,$ such that \[\,(\Id_{\,\BF 1\tensor\Sigma\tensor\IO}\tensor\varphi)\big(W(t_i)\big)=W(u_i)\,\]
 }
 \vspace{-5mm}
 \proof{Take as $\,\varphi\,$ the inner automorphism associated with the isometric wiring
@@ -52,9 +53,13 @@ The word and observation algebras we introduced earlier can be shown to form a n
 \theorem[a normative pair]
 {For any $\,\Sigma\,$, $\,\big((\closed)^1,\C S\big)\,$ is a normative pair.}
 
-\proof[sketch]{By simple computations, the set $$\,\C A:=\vect\set{\sigma F}{\sigma \in \C S \text{ and }\, F\in (\closed)^\infty}\,$$ can be shown to be a $\ast$-algebra, so that $\,\alg^\dagger(\C S\cup(\closed)^1)=\alg^\dagger(\C S\cup(\closed)^\infty)=\C A\,$.
+\proof[sketch]{By simple computations, the set
+\[\,\C A:=\vect\set{\sigma F}{\sigma \in \C S \mbox{ and }\, F\in (\closed)^\infty}\,\]
+ can be shown to be a $\ast$-algebra, so that $\,\alg^\dagger(\C S\cup(\closed)^1)=\alg^\dagger(\C S\cup(\closed)^\infty)=\C A\,$.
 
-Now, if $\,\varphi\,$ is an automorphism of $\,(\closed)^1\,$, it can be written as $\,\varphi(F\tensor 1)=\psi(F)\tensor 1\,$ with $\,\psi\,$ an automorphism of $\,\closed\,$. We define for $\,F=F_1\tensor\cdots\tensor F_n\tensor 1\in(\closed)^n\,$, $\,\tilde\phi(F):=\psi(F_1)\tensor\cdots\tensor \psi(F_n)\tensor 1\,$ which extends into an automorphism of $\,(\closed)^\infty\,$ by linearity. Finally, we extend $\,\tilde\varphi\,$ to $\,\C A\,$ by $\,\overline\varphi(\sigma F):=\sigma\tilde\varphi(F)\,$
+Now, if $\,\varphi\,$ is an automorphism of $\,(\closed)^1\,$, it can be written as $\,\varphi(F\tensor 1)=\psi(F)\tensor 1\,$ with $\,\psi\,$ an automorphism of $\,\closed\,$.
+We define for $\,F=F_1\tensor\cdots\tensor F_n\tensor 1\in(\closed)^n\,$, $\,\tilde\phi(F):=\psi(F_1)\tensor\cdots\tensor \psi(F_n)\tensor 1\,$ which extends into an automorphism of $\,(\closed)^\infty\,$ by linearity.
+Finally, we extend $\,\tilde\varphi\,$ to $\,\C A\,$ by $\,\overline\varphi(\sigma F):=\sigma\tilde\varphi(F)\,$
 }
 
 \medskip
@@ -64,8 +69,9 @@ Now, if $\,\varphi\,$ is an automorphism of $\,(\closed)^1\,$, it can be written
 Therefore the notion of the language recognized by an observation makes sense, \textit{via} corollary \ref{indep}.
 
 \define[language of an observation]
-	{Let $\,\phi\in\C O_\Sigma\,$ be an observation over $\,\Sigma\,$. The \emph{language recognized by $\,\phi\,$} is the following set of words over $\,\Sigma\,$
+	{Let $\,\phi\in\C O_\Sigma\,$ be an observation over $\,\Sigma\,$.
+	The \emph{language recognized by $\,\phi\,$} is the following set of words over $\,\Sigma\,$
 	\vspace{-1mm}
-	$$\lang(\phi):=\set{W\:\text{ word over }\,\Sigma}{\phi\,W(t_i)\,\text{ nilpotent for any choice of }\,(t_i)} $$
+	\[\lang(\phi):=\set{W\:\mbox{word over}\,\Sigma}{\phi\,W(t_i)\,\mbox{nilpotent for any choice of}\,(t_i)}\]
 	}
 	\vspace{-8mm}
