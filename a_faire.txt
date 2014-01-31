@@ -20,3 +20,4 @@ X Parler de weak unification ? -> non
 * Revoir les paragraphes qui suivent le lemme 8. Not. pour dire « on va calculer avec ». Ou début section suivante ?
 * Préciser pour taille d’un terme / d’un mot / d’une entrée ?
 * Insister sur l’innovation en règle général.
+* Ajoter un mot sur NL = co-NL
