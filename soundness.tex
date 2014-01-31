@@ -33,9 +33,10 @@ The dimension of $\,\comp_\phi (t_0\dots t_n)\,$ is $\,\card{\Sigma} \times 2 \t
 \lemma[separation]
 {\label{sep}For any observation $\,\phi\,$ and any word $\,W\,$, the space $\,\comp_\phi(t_0\dots t_n)$ is separating for the wiring $\,\phi \,W(t_0\dots t_n)\,$.}
 
-\proof[of theorem \ref{soundness}]{With these lemmas at hand, we can define the following non-deterministic algorithm
+\proof[of theorem \ref{soundness}]{With these lemmas at hand, we can define the following non-deterministic algorithm below
 
-\begin{multicols}{2}
+%\begin{multicols}{2}
+\begin{wrapfigure}[18]{l}{0.5\textwidth}
 \begin{algorithmic}[1]
 \STATE compute $\,N(\phi)\,$ and $\,S(\phi)\,$
 \STATE $D\gets 2|\TT S(\phi)|\,|\Sigma|(n+1)^{N(\phi)}$
@@ -51,17 +52,26 @@ The dimension of $\,\comp_\phi (t_0\dots t_n)\,$ is $\,\card{\Sigma} \times 2 \t
 \ENDWHILE
 \RETURN REJECT
 \end{algorithmic}
-\end{multicols}
+%\end{multicols}
+\caption{Nilpotency algorithm}
+\end{wrapfigure}
 
 \smallskip
 All computation paths accept if and only if $\,(\phi W(t_i))^n(\comp_\phi(t_i))=0\,$ for some $\,n\,$ lesser or equal to the dimension $D$ of the computation space $\,\comp_\phi(t_i)\,$.
 By Lemma \ref{sep}, this is equivalent to $\,\phi W(t_i)\,$ nilpotent.
 
+<<<<<<< HEAD
 The vector chosen at lines 4 is erased by the one chosen at line 9 every time we go through the {\bf while}-loop, and is of size at most $D$.
 The values $C$ and $D$ that need to be stored are the size of the computation space, of size logarithmic in the size of the input as we mentionned in Definition \ref{compspace}.
 %
 %The algorithm can run in logarithmic space, because it only needs to store a vector of a vector space of dimension $\,D=2|\TT S(\phi)|\,|\Sigma|(n+1)^{N(\phi)}\,$ (which can be represented as an integer lesser or equal to $\,D\,$), and the two integers $\,C,D\,$.
 The computation of $\,(\phi W(t_i))(v)\,$ at line 6 and 9 and  can be performed in logarithmic space by Theorem \ref{unif-logspace}, as all terms used in words representations and observations are linear and shares no variables.
+=======
+\medskip
+The algorithm can run in logarithmic space, because it only needs to store a vector of a vector space of dimension $\,D=2|\TT S(\phi)|\,|\Sigma|(n+1)^{N(\phi)}\,$ (which can be represented as an integer lesser or equal to $\,D\,$), and the two integers $\,C,D\,$.
+The computation of $\,(\phi W(t_i))(v)\,$ at line 6 and 9 and  can be performed in logarithmic space by theorem \ref{unif-logspace}, as all terms used words representations and observations are linear.
+
+>>>>>>> 47fbb8dbe02e1f2dd99850c98560bbaa17969c63
 \smallskip
 Moreover, if $\,\phi\,$ is an isometric wiring, $\,(\phi W(t_i))(v)\,$ consists of a single vector instead of a sum by Lemma \ref{lem_isom}, and there is therefore no non-deterministic choice to be made at line 9.
 It is enough to run the algorithm enumerating all possible vectors of $\,\comp_\phi(t_i)\,$ at line 4 to determine the nilpotency of $\,\phi W(t_i)\,$.

@@ -24,7 +24,7 @@ The two following theorems set the basis for a notion of acceptation/rejection i
 %\notation{Given a finite set of closed terms $\,S\,$, we write $\,\displaystyle1_S:=\sum_{\TT s\in S} s \flow s\,$.}
 
 \theorem[automorphic representations]
-	{\label{automorphic}Any two representations $\,W(t_i),W(u_i)\,$ of a word $\,W\,$ over $\,\Sigma\,$ are automorphic: there exists an automorphism $\,\varphi\,$ of $\,(\closed)^1\,$ such that \[\,(\Id_{\,\BF 1\tensor\Sigma\tensor\IO}\tensor\varphi)\big(W(t_i)\big)=W(u_i)\,\]
+	{\label{automorphic}Any two representations $\,W(t_i),W(u_i)\,$ of a word $\,W\,$ over $\,\Sigma\,$ are automorphic: there exists an automorphism $\,\varphi\,$ of $\,(\closed)^1\,$ such that \[\,(\Id_\ualg\tensor\varphi)\big(W(t_i)\big)=W(u_i)\,\]
 }
 \vspace{-5mm}
 \proof{Take as $\,\varphi\,$ the inner automorphism associated with the isometric wiring
@@ -38,7 +38,7 @@ The two following theorems set the basis for a notion of acceptation/rejection i
 	{\label{normative}Let $\,(\C A,\C B)\,$ be a normative pair, $\,F\in \C A\,$, $\,G\in \C B\,$ and $\,\varphi\,$ an automorphism of $\,\C A\,$, then $\,GF\,$ is nilpotent if and only if $\,G\,\varphi(F)\,$ is nilpotent.
 }
 
-\proof{Let $\,\overline\varphi\,$ be the extension of $\,\varphi\,$ as in defintion \ref{normpair}. We have for all $\,n\geq 1\,$ that $\,(G\varphi(F))^n=(\overline\varphi(G)\overline\varphi(F))^n=(\overline\varphi(GF))^n=\overline\varphi((GF)^n)\,$.
+\proof{Let $\,\overline\varphi\,$ be the extension of $\,\varphi\,$ as in definition \ref{normpair}. We have for all $\,n\geq 1\,$ that $\,(G\varphi(F))^n=(\overline\varphi(G)\overline\varphi(F))^n=(\overline\varphi(GF))^n=\overline\varphi((GF)^n)\,$.
 
 By injectivity of $\,\overline\varphi\,$, $\,(\varphi(G)F)^n=0\,$ if and only if $\,(GF)^n=0\,$.
 }
