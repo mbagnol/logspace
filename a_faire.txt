@@ -6,16 +6,15 @@ X Permutations, l. 54, expliquer le rôle futur de ce y. Expliquer le jeu sur la
 X Citer unification as a complexity measure for logic …, 3 lightings of logic.
 X Soundness, ligne 57, préciser les tailles des constantes C et L ?
 X Parler de weak unification ? -> non
-
+X Un mot sur vnA dans intro.
 
 
 * Revoir réf. pointeur machine, indiquer que d sert à marquer la direction, l’entrée / sortie, dire que le rejet = ne pas accepter, détailler / donner réf. / reformuler le « It turns out that pointer machines are expressive enough to solve any \textsc{(N)Logspace} problem », appartenance à une classe de complexité pas déf.
 * Conclusion généralement à revoir (« in the relation to pointer machines » : « to mimic computation » ?)
-* Revoir la biblio
+* Revoir la biblio (tout compte fait, citer Herbrand dans un article de conf, c'est pas un peu prétentieux?)
 * Soundness, ajouter un mot à la fin pour dire la correspondance entre unification qui « progresse » et étapes de calcul ?
 * Conf. ne dépends pas de l’entrée.
 * Plus de complexité -- unification dans l’intro.
-* Un mot sur vnA dans intro.
 * Dire preuve thm 34 que clôture / variable -> pas de pb.
 * Revoir les paragraphes qui suivent le lemme 8. Not. pour dire « on va calculer avec ». Ou début section suivante ?
 * Préciser pour taille d’un terme / d’un mot / d’une entrée ?
