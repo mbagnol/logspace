@@ -1,4 +1,10 @@
-To prove the converse of theorem \ref{soundness}, we introduce a notion of pointer machine that can easily be encoded as wirings.
+To prove the converse of Theorem \ref{soundness}, we prove that wirings can encode a special kind of Turing Machines\footnote{%
+To encode Turing Machines in unification and to relates computation steps to steps of unification was already done for instance in \cite{Itai1987}, but this latter was about calculability, and did not really took into account complexity.}%
+: pointers machines.
+This model of computation can naturally be conceived as read-only Turing Machines, or as Multi-Head Finite Automata: our device will scan the input without the ability to store anything else than the \emph{positions} of its \emph{pointers} and the current state\footnote{%
+For a survey of this topic, one may consult \cite[Chap.4]{Aubert2013b}.}.
+
+we introduce a notion of pointer machine that can easily be encoded as wirings.
 Apart from the result, this also provides a way of seeing how wiring are computing.
 
 Pointer machines \cite{ben-amram_what_1995} are theoretical devices that aim at modelling computation in a way that varies from turing machines: the data is a read-only sequence of symbols, and there is no memory tape. Instead, the machine manipulates pointers to various point of the input.
@@ -81,4 +87,3 @@ Moreover, if $\,L\in \text{\sc Logspace}\,$ then $\,M\,$ can be chosen to be rev
 }
 
 \proof{The proof of this fact is a matter of encoding, along the lines of the corresponding proofs in \cite{aubert_characterizing_2012,seiller_logarithmic_2013}.}
-\cite{Aubert2013b}
