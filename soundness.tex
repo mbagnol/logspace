@@ -25,7 +25,7 @@ The \emph{computation space} $\,\comp_\phi (t_0\dots t_n)\,$ is the subspace of 
 \[s\p \TT c\p \TT d \p (\,a_1\p\,\cdots\,\p a_{N(\phi)}\,\p\, \start)\]
 where $\,s\in \TT S(\phi)\,$, $\,\TT c\in \Sigma\,$, $\,d\in\IO\,$ and the $\,a_i\in \{\,t_0,\dots, t_n\,\}\,$.
 
-The dimension of $\,\comp_\phi (t_0\dots t_n)\,$ is $\,\card{\Sigma} \times 2 \times (n+1)^{N(\phi)}\times \card{\TT S(\phi)}\,$, that is to say ---~given a word $w$ of length $n$~--- $\bigO(N(\phi) \times \log(n))$. 
+The dimension of $\,\comp_\phi (t_0\dots t_n)\,$ is $\,\card{\Sigma} 2 (n+1)^{N(\phi)}\card{\TT S(\phi)}\,$, that is to say logarithmic in the size of the input. 
 }
 
 
@@ -62,6 +62,7 @@ By Lemma \ref{sep}, this is equivalent to $\,\phi W(t_i)\,$ nilpotent.
 
 The vector chosen at lines 4 is erased by the one chosen at line 9 every time we go through the {\bf while}-loop, and is of size at most $D$.
 The values $C$ and $D$ that need to be stored are the size of the computation space, of size logarithmic in the size of the input as we mentionned in Definition \ref{compspace}.
+
 \medskip
 %The algorithm can run in logarithmic space, because it only needs to store a vector of a vector space of dimension $\,D=2|\TT S(\phi)|\,|\Sigma|(n+1)^{N(\phi)}\,$ (which can be represented as an integer lesser or equal to $\,D\,$), and the two integers $\,C,D\,$.
 The computation of $\,(\phi W(t_i))(v)\,$ at line 6 and 9 and  can be performed in logarithmic space by Theorem \ref{unif-logspace}, as all terms used in words representations and observations are linear and shares no variables.
