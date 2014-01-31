@@ -43,15 +43,16 @@ We define $\,M(W)\,$ to be $\,M\,$ with all its pointers on $\,\star\,$, $\,W\,$
 A \emph{transition} of $\,M(W)\,$ is a triple of configurations
 \[s,\TT c,\TT d,(p_1,\dots,p_N) \trans{\TT{MOVE}}{} s,\TT c',\overline{\TT d},(p_1',\dots,p_N') \trans{\TT{SWAP}}{} s',\TT c'',\TT d',(p_{\sigma(1)}',\dots,p_{\sigma(N)}') \]
 such that
-\begin{itemize}
+\begin{enumerate}
 	\item if $\,\TT d\in\IO\,$, $\,\overline{\TT d}\,$ is the other element of $\,\IO\,$,
 	\item $p_1'=p_1+1\,$ if $\,\TT d=\i\,$ and $\,p_1'=p_1-1\,$ if $\,\TT d=\o\,$,
 	\item $p_i'=p_i\,$ for $\,i\neq 1\,$,
-	\item $\TT c\,$ is the letter at position $\,p_1\,$ and $\,\TT c'\,$ is the letter at position $\,p_1'\,$,
+	\item $\TT c\,$ is the letter at position $\,p_1\,$ and $\,\TT c'\,$ is the letter at position $\,p_1'\,$, \label{condition}
 	\item and $(s,\TT c',\overline{\TT d}) \rightarrow (s',\TT c'',\TT d') \times \sigma\,$ belongs to $\,\Delta\,$.
-\end{itemize}
+\end{enumerate}
 }
 There is no constraint on $\,c''\,$, but every time this value differs from the letter pointed by $\,p_{\sigma(1)}'\,$, the computation will halt on the next \texttt{MOVE} phase, because there is a mismatch between the value that is supposed to have been read and the actual bit of $\,W\,$ stored at this position.
+At item \ref{condition}
 This computational behaviour is suited to be embeded into the wirings, it reflects their wild way of computing, massively non-deterministic.
 
 %Note that the maintenance of $\,\TT c''\,$ as the letter pointed to by the (new) main pointer is not required at the \texttt{SWAP} phase, which will cause most computation to stop unexpectedly.
@@ -71,33 +72,27 @@ As a side-effect, it gives evidences that our pointer machines compute in a \enq
 {\label{pointerl}If $\,L\in \text{\sc NLogspace}\,$, then there exist a pointer machine $\,M\,$ such that $\,\lang(M)=L\,$.
 Moreover, if $\,L\in \text{\sc Logspace}\,$ then $\,M\,$ can be chosen to be reversible.
 }
-\proof{%
+\proof[sketch]{%
 It is well-known that (non-)Deterministic Multi-Head Finite Automata characterize {\sc (N)Logspace} \cite{Hartmanis1972}.
-It takes little effort to see that pointer machines are just a reasonnable rearrangement of the complementary of Multi-Head Finite Automata: that only one pointer may move does not lower the computational power of our device since it is always possible to switch the rôle of the pointers.
+It takes little effort to see that pointer machines are just a reasonnable rearrangement of Multi-Head Finite Automata: that only one pointer may move does not lower the computational power of our device since it is always possible to switch the rôle of the pointers.
 We can get back to the expected notion of transition by encoding into the states the values that can be read by the pointers.
 That acceptation and rejections are \enquote{reversed} is harmless in the deterministic (reversible) case, and uses that {\sc co-NLogspace = NLogspace} \cite{Immerman1988} to get the expected result in the non-deterministic case.
 }
 
+As we said, our pointer machines are designed to be easily simulated by wirings, so that we get the expected result almost for free.
 
-\define[machines and wirings]
-{Let $\,M=(N,\TT S,\Delta)\,$ be a pointer machine.
-We associate to the $\,s\in \TT S\,$ a set of distinct closed terms $\,[\TT S]\,$.
-We write $\,[s]\,$ the term associated to $\,s\,$.
-
-To any element $\,D=(s,\TT c,\TT d) \rightarrow (s',\TT c',\TT d') \times \sigma\,$ of $\,\Delta\,$ we associate the flow 
-\[[D]:=([s']\p\TT c'\p\TT d' \flow [s]\p\TT c\p\TT d) \tensor \sigma \:\in[\TT S]\tensor\Sigma\tensor\IO\tensor\C S_n\,\]
-
-and we define the wiring $\,[M]\in\C O_\Sigma^+\,$ as $\,\displaystyle\sum_{D\in \Delta} [D]\,$.
+\theorem[simulation]
+{If $\,L\in \text{\sc NLogspace}\,$, then there exist an observation $\,\phi\in\C O_\Sigma\,$ such that $\,\lang(\phi)=L\,$.
+Moreover, if $\,L\in \text{\sc Logspace}\,$ then $\,\phi\,$ is an isometric wiring.
 }
 
-This translation preserves the language recognized and relates reversibility with isometricity.
+\proof{%
+By Theorem \ref{pointerl}, there exists a pointer machine $\,M=(N,\TT S,\Delta)\,$ such that $\lang(M) = L$.
+We associate to $\,S\,$ a set of distinct closed terms $\,[\TT S]\,$ and write $\,[s]\,$ the term associated to $\,s\,$.
+To any element $\,D=(s,\TT c,\TT d) \rightarrow (s',\TT c',\TT d') \times \sigma\,$ of $\,\Delta\,$ we associate the flow 
+\[[D]:=([s']\p\TT c'\p\TT d' \flow [s]\p\TT c\p\TT d) \tensor \sigma \:\in[\TT S]\tensor\Sigma\tensor\IO\tensor\C S_n\,\]
+and we define the wiring $\,[M]\in\C O_\Sigma^+\,$ as $\,\displaystyle\sum_{D\in \Delta} [D]\,$.
 
-\theorem[reversibility]
-{A pointer machine $\,M\,$ is reversible if and only if $\,[M]\,$ is an isometric wiring.}
-
-\theorem[acceptation]
-{For any pointer machine $\,M\,$, $\,\lang(M)=\lang([M])\,$.}
-
-
-
-\proof{The proof of this fact is a matter of encoding, along the lines of the corresponding proofs in \cite{aubert_characterizing_2012,seiller_logarithmic_2013}.}
+One can easily check that this translation preserves the language recognized and relates reversibility with isometricity: in fact, $\,M\,$ is reversible if and only if $\,[M]\,$ is an isometric wiring.
+So if $\,L\in \text{\sc Logspace}\,$, $\,M\,$ is deterministic and can always be chosed to be reversible.
+}
