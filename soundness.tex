@@ -32,8 +32,9 @@ where $\,s\in \TT S(\phi)\,$, $\,\TT c\in \Sigma\,$, $\,d\in\IO\,$ and the $\,a_
 \lemma[separation]
 {\label{sep}For any observation $\,\phi\,$ and any word $\,W\,$, the space $\,\comp_\phi(t_0\dots t_n)$ is separating for the wiring $\,\phi \,W(t_0\dots t_n)\,$.}
 
-\proof[of theorem \ref{soundness}]{With these lemmas at hand, we can define the following non-deterministic algorithm
+\proof[of theorem \ref{soundness}]{With these lemmas at hand, we can define the following non-deterministic algorithm below
 
+\begin{wrapfigure}[18]{l}{0.5\textwidth}
 \begin{algorithmic}[1]
 \STATE compute $\,N(\phi)\,$ and $\,S(\phi)\,$
 \STATE $D\gets 2|\TT S(\phi)|\,|\Sigma|(n+1)^{N(\phi)}$
@@ -49,11 +50,14 @@ where $\,s\in \TT S(\phi)\,$, $\,\TT c\in \Sigma\,$, $\,d\in\IO\,$ and the $\,a_
 \ENDWHILE
 \RETURN REJECT
 \end{algorithmic}
+\caption{Nilpotency algorithm}
+\end{wrapfigure}
 
 \smallskip
 All computation paths accept if and only if $\,(\phi W(t_i))^n(\comp_\phi(t_i))=0\,$ for some $\,n\,$ lesser or equal to the dimension of the computation space.
 By Lemma \ref{sep}, this is equivalent to $\,\phi W(t_i)\,$ nilpotent.
 
+\medskip
 The algorithm can run in logarithmic space, because it only needs to store a vector of a vector space of dimension $\,D=2|\TT S(\phi)|\,|\Sigma|(n+1)^{N(\phi)}\,$ (which can be represented as an integer lesser or equal to $\,D\,$), and the two integers $\,C,D\,$.
 The computation of $\,(\phi W(t_i))(v)\,$ at line 6 and 9 and  can be performed in logarithmic space by theorem \ref{unif-logspace}, as all terms used words representations and observations are linear.
 

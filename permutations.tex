@@ -11,7 +11,7 @@ We will always write ``$\ast$-algebra'' instead of the more correct ``$\ast$-sub
 }
 
 \smallskip
-Two important features of $\,\ualg\,$ for this work are the possibility of representing (unbounded) tensor products and finite-support permutations of $\,\BB N\,$.
+Two important features of the unification algebra $\,\ualg\,$ for this work are the possibility of representing (unbounded) tensor products and finite-support permutations of $\,\BB N\,$.
 
 \define[tensor product]
 	{Let $\,u\flow v\,$ and $\,t\flow w\,$ be two flows.
@@ -32,16 +32,19 @@ This actually defines an embedding of the algebraic tensor product of $\ast$-alg
 
 
 \define[unbounded tensor]
-	{Let $\,\C A\,$ be a $\ast$-algebra. We define the $\ast$-algebras $\,\C A^n\,$ for all $\,n\in \BB N\,$ as
+	{\label{unbounded}Let $\,\C A\,$ be a $\ast$-algebra. We define the $\ast$-algebras $\,\C A^n\,$ for all $\,n\in \BB N\,$ as
 	\[\C A^0:= \BF 1 \quad\text{and}\quad \C A^{n+1}:=\,\C A \tensor \C A^n\]
 	and the $\ast$-algebra $\ \displaystyle\C A^\infty:=\:\bigcup_{n\in N} \:\C A^n\ $.% and $\ \displaystyle\C A^{\leq N}:=\:\bigcup_{n\in\{\,1,\dots,N\,\}}^N \:\C A^n\ $.
 }
 
 We will consider finite permutations, but allow them to be composed even when their domain of definition is not the same.
 
-\notations{If $\,\sigma\in \F S_n\,$, we define $\,\sigma_{+k}\in \F S_{n+k}\,$ as the permutation $\,\sigma\,$ extended to $\,\{\:1,\dots,n,\dots,n+k\:\}\,$ letting $\,\sigma_{+k}(n+i):=n+i\,$ for $\,i\in\{\,1,\dots,k\,\}\,$.
+\smallskip
+\notations{Let $\,\sigma\in \F S_n\,$ (where $\,\F S_n\,$ is the permutation group on $\,\{\,1,\dots,n\,\}\,$).
 
-We also write $\,1_k:=\Id_{\{1,\dots,k\}}\in \F S_k\,$.}
+\smallskip
+We define $\,\sigma_{+k}\in \F S_{n+k}\,$ as the permutation $\,\sigma\,$ extended to $\,\{\:1,\dots,n,\dots,n+k\:\}\,$ letting $\,\sigma_{+k}(n+i):=n+i\,$ for $\,i\in\{\,1,\dots,k\,\}\,$.
+We also write \hbox{$\,1_k:=\Id_{\{1,\dots,k\}}\in \F S_k\,$.}}
 
 \define[representation]
 	{To a permutation $\,\sigma \in \F S_n\,$ we associate the flow
@@ -51,8 +54,11 @@ We also write $\,1_k:=\Id_{\{1,\dots,k\}}\in \F S_k\,$.}
 	We will omit the brackets when there is no ambiguity.
 }
 
+The idea is that these permutations will be acting on the unbounded tensor product of definition \ref{unbounded}. A permutation $\,\sigma\in\F S_n\,$ will act on the $\,n\,$ first component of the tensor product by swapping the and leave the rest unchanged: this is what the last $\,y\,$ variable that is not modified stands for in this definition.
+
 \lemma[representation]
 	{\label{open-represent}For $\,\sigma\in \F S_n\,$ and $\,\tau\in\F S_{n+k}\,$ we have
+	\vspace{-2mm}
 	\[[\sigma_{+k}]=[\sigma][1_{n+k}]=[1_{n+k}][\sigma] \qquad
 	[\sigma_{+k}\circ\tau]=[\sigma][\tau]\qquad
 	 \text{and} \qquad
