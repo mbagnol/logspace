@@ -15,7 +15,7 @@
         \setitemize{itemsep=1pt,topsep=3pt,parsep=0pt,partopsep=0pt}
 %\usepackage{geometry} %marges
 %        \geometry{hmargin=3.4cm,vmargin=2.5cm}
-\usepackage[colorlinks,linkcolor=red,bookmarks,bookmarksopen,bookmarksdepth=2]{hyperref} %hyperliens
+\usepackage{hyperref} %hyperliens
 \usepackage{xcolor}
 \usepackage{framed} %barres vertivales
 \usepackage{blindtext} %lorem ipsum
@@ -38,6 +38,31 @@
 %%% figures
 \usepackage{graphicx}
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hypersetup{
+%%%%%%%%%%%%% Apparence / réglage des liens
+	plainpages			=	false,		% Pages anchors are named by the Arabic form
+	bookmarksnumbered	=	true,		% put section numbers in bookmarks
+	bookmarks,
+	bookmarksopen,
+	bookmarksdepth=2	,
+	colorlinks			=	true, 		% False = encadrés, True = mis en couleur
+	breaklinks			=	true,		% Pour les césures
+	linkcolor			=	red,	 	% liens internes
+%	citecolor			=	nenu4, 		% lien citations 
+%	urlcolor			=	nenu2,		% Liens externes
+	pdfdisplaydoctitle	= 	true,		% display document title instead of file name in title bar,
+%%%%%%%%%%%%%% Infos
+	pdfinfo={
+		Author		=	{Clément Aubert and Marc Bagnol},
+		Title		=	{Unification and Logarithmic Space},
+		Subject		=	{},
+		Keywords	=	{Theoretical computer science, Linear Logic, Algebra, Implicit complexity, Unification, Pointers},
+		Creator		=	{PDFLaTeX},
+		Producer	=	{PDFLaTeX},
+		Licence 	= 	{Creative Commons BY-NC-SA  3.0 or later},
+		Lang		=	{en}
+	}
+}
 
 \usepackage{mathtools}
