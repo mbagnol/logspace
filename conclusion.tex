@@ -1,43 +1,22 @@
 A pending question about this approach to complexity classes is about the structure that are exactly needed to carry on the construction. 
-Earlier works made use of von Neumann algebra to get setting expressive enough. 
-While the possibility of representing the action of permutations on a unbounded tensor product seems ,
+Earlier works made use of von Neumann algebras to get a setting that is expressive enough, which is not the case in this article.
+On the contrary, the possibility of representing the action of permutations on a unbounded tensor product is a common denominator of
+\cite{girard_normativity_2012,aubert_characterizing_2012,seiller_logarithmic_2013} and our work.
+It seems more deeply related to logarithmic space and pointer machines.
 
 \smallskip
-
-An important point that needs to be clarified is 
-
-
-
-%With respect to the earlier \cite{girard_normativity_2012,aubert_characterizing_2012,seiller_logarithmic_2013},
-%this work begins to clarify one point: what is really needed to carry on the construction that captures logarithmic space computation?
-
-%Indeed, these earlier works used in place of the unification algebra the so-called \emph{hyperfinite factor},
-%which involved advanced notions of von~Neumann algebras theory.
-%Our work shows that the von Neumann structure is indeed not indispensible,
-%whereas the ability to represent the action of permutation groups on an unbounded tensor product seems to be an important element in the relation to pointer machines.
-
-
-
-
-
-
-\smallskip
-The language the unification algebra gives us a twofold point of view on computation, either through algebraic structures or pointer machines.
-We may therefore start exploring possible variations of the construction, combining intuitions from both points of view.
-
-%For instance, a natural operation one would like to define on pointer machines would be the one the resets the main pointer to the initial position holding the symbol $\,\star\,$.
-%This is not possible within the setting of this article, because of the notion of normative pair:
-%this would require to know in advance the term $\,t_0\,$ corresponding to the initial position.
+The language of the unification algebra gives us a twofold point of view on computation, either through algebraic structures (that are described finitely by wirings) or pointer machines.
+We may therefore start exploring possible variations of the construction, combining intuitions from both worlds.
 
 \smallskip
 For instance, the choice of a normative pair can affect the expressivity of the construction:
-the more restrictive the notion of representation of word is, the more liberal that of observation can become.
+the more restrictive the notion of representation of words is, the more liberal that of observation can become.
 Whether and how this can affect the corresponding complexity class is definitely a direction for future work.
 
 \smallskip
-The logical counterpart of this work also need clarifying.
-Indeed, the notion of representation of word comes directly from proof-theory, while the notion of observation does not correspond to any known logical construction.
+The logical counterpart of this work also needs clarifying.
+Indeed, the idea of representation of words comes directly from proof-theory, while the notion of observation does not correspond to any known logical construction.
 
 \smallskip
-That execution in our setting is the product of matrices suggests that we represent parallel computation.
-Yet, we did not take full profit of this idea, altough it seems more easy to express it with unification rather than with von Neumann algebras.
+Finally, as the execution in our setting is the product of matrices, it seems possible to relate our modelisation with parallel computation. Indeed, the product of matrices is known to be computable efficiently on a parallel machine, and so is matching of linear terms.
+%Yet, we did not take full profit of this idea, altough it seems more easy to express it with unification rather than with von Neumann algebras.
