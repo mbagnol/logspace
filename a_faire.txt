@@ -19,3 +19,18 @@ X Un mot sur vnA dans intro.
 * Revoir les paragraphes qui suivent le lemme 8. Not. pour dire « on va calculer avec ». Ou début section suivante ?
 * Préciser pour taille d’un terme / d’un mot / d’une entrée ?
 * Insister sur l’innovation en règle général.
+* Remettre les pdfinfos
+* Gérer bogue espace (cf. Theorem 4 .)
+* Nom Theorem 9 (logarithmic space [24, lemma 20]). à revoir
+* Reformuler Observations will stand for the machines accepting and refusing words. They lie
+* Revoir paragraphe We are going to define the way observations accept
+* Mettre dans une ligne 
+\vbox{	\begin{itemize}
+		\item $\varphi(FG)=\varphi(F)\varphi(G)$
+		\item $\varphi(F^\dagger)=\varphi(F)^\dagger$
+		\item $\varphi$ is injective
+	\end{itemize}}
+* Virer Lewis, H.R., Statman, R.: Unifiability is complete for co-NLogSpace. Inf. Process.
+* Dans alto, dire "pick" est non-det.
+* \footnote{%
+To encode Turing Machines in unification and to relates computation steps to steps of unification was already done for instance in \cite{Itai1987}, but this latter was about calculability, and did not really took into account complexity.}%

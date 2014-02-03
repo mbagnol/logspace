@@ -1,6 +1,6 @@
 Unification can be generally thought of the study of formal solving of equations between terms.
 
-This topic was introduced by Herbrand in his thesis \cite{herbrand_recherches_1930}, but became really widespread after the work of J.~A.~Robinson on automated theorem proving \cite{robinson_machine-oriented_1965}.
+This topic was introduced by Herbrand, but became really widespread after the work of J.~A.~Robinson on automated theorem proving \cite{robinson_machine-oriented_1965}.
 The unification technique is also at the core of the logic programming language \textsc{Prolog} and type inference for functional programming languages such as \textsc{CaML} and \textsc{Haskell}.
 
 %\subsubsection*{Terms and substitutions}
@@ -133,11 +133,11 @@ His original procedure was however quite inefficient, with potential exponential
 \smallskip
 It turns out that the general unification problem can be solved in linear time, which was discovered independently in \cite{paterson_linear_1978} and \cite{martelli_unification_1976}, improving on the almost-linear algorithms thus far designed.
 
-%\smallskip
-%Unification was first thought to be a \textsc{NLogspace}-complete problem. However, an error was eventually found in the note \cite{lewis_unifiability_1982} claiming this fact, which eventually led to a determination of the intrinsic complexity of the problem: unification is indeed \textsc{Ptime}-complete under logarithmic space reductions \cite{dwork_sequential_1984}.
+\smallskip
+Unification was first thought to be a \textsc{NLogspace}-complete problem. However, an error was eventually found in the note \cite{lewis_unifiability_1982} claiming this fact, which eventually led to a determination of the intrinsic complexity of the problem: unification is indeed \textsc{Ptime}-complete under logarithmic space reductions \cite{dwork_sequential_1984}.
 
 \medskip
-Even if unification is knwon to be a \textsc{Ptime}-complete problem, we are concerned in this article with a very much simpler case of the problem: the matching (definition \ref{disjoint}) of linear terms (\textit{ie.} where variables occur at most once).
+In this article, we are concerned with a very much simpler case of the problem: the matching (definition \ref{disjoint}) of linear terms (\textit{ie.} where variables occur at most once).
 This case can be solved in a space-efficient way.
 
 \theorem[logarithmic space {\cite[lemma 20]{dwork_parallel_1988}}]

@@ -1,5 +1,5 @@
-We are going to define the way observations accept and reject words.
-Indeed there is an issue with the notion of representation: an observation is an element of $\,\ualg\,$ and can therefore only interact with \emph{representations} of a word, and there are many possible representation of the same word (in definition \ref{words}, different choices of closed terms lead to different representations).
+We are going to define how observations accept and reject words.
+Indeed there is an issue with the notion of representation: an observation is an element of $\,\ualg\,$ and can therefore only interact with \emph{representations} of a word, and there are many possible representation of the same word (in Definition \ref{words}, different choices of closed terms lead to different representations).
 
 Therefore one has to ensure that acceptation or rejection is independent of the representation, so that the construction makes sense.
 
@@ -38,13 +38,13 @@ The two following theorems set the basis for a notion of acceptation/rejection i
 	{\label{normative}Let $\,(\C A,\C B)\,$ be a normative pair, $\,F\in \C A\,$, $\,G\in \C B\,$ and $\,\varphi\,$ an automorphism of $\,\C A\,$, then $\,GF\,$ is nilpotent if and only if $\,G\,\varphi(F)\,$ is nilpotent.
 }
 
-\proof{Let $\,\overline\varphi\,$ be the extension of $\,\varphi\,$ as in definition \ref{normpair}. We have for all $\,n\geq 1\,$ that $\,(G\varphi(F))^n=(\overline\varphi(G)\overline\varphi(F))^n=(\overline\varphi(GF))^n=\overline\varphi((GF)^n)\,$.
+\proof{Let $\,\overline\varphi\,$ be the extension of $\,\varphi\,$ as in Definition \ref{normpair}. We have for all $\,n\geq 1\,$ that $\,(G\varphi(F))^n=(\overline\varphi(G)\overline\varphi(F))^n=(\overline\varphi(GF))^n=\overline\varphi((GF)^n)\,$.
 
 By injectivity of $\,\overline\varphi\,$, $\,(\varphi(G)F)^n=0\,$ if and only if $\,(GF)^n=0\,$.
 }
 
 \corollary[independance]
-{\label{indep}If $\,\big((\C \closed)^1,\C B\big)\,$ is a normative pair, $\,W\,$ a word over $\,\Sigma\,$ and $\,F\in \closed\tensor\Sigma\tensor\IO\tensor\C B\,$, then $\,FW(t_i)\,$ is nilpotent for one choice of $\,t_i\,$ if and only if it is nilpotent for all choices of $\,t_i\,$.}
+{\label{indep}If $\,\big((\C \closed)^1,\C B\big)\,$ is a normative pair, $\,W\,$ a word over $\,\Sigma\,$ and $\,F\in \closed\tensor\Sigma\tensor\IO\tensor\C B\,$ an observation, then the application of the observation to the representation of the word $\,FW(t_i)\,$ is nilpotent for one choice of $\,t_i\,$ if and only if it is nilpotent for all choices of $\,t_i\,$.}
 
 %Now we can use the tools from section \ref{actions} to build a particular normative pair.
 
@@ -66,7 +66,7 @@ Finally, we extend $\,\tilde\varphi\,$ to $\,\C A\,$ by $\,\overline\varphi(\sig
 \remark{Here we sketched a direct proof for brevity, but this can also be shown by involving a little more mathematical structure (actions of permutations on the unbounded tensor and crossed products) which would give a more synthetic proof.}
 
 \medskip
-Therefore the notion of the language recognized by an observation makes sense, \textit{via} corollary \ref{indep}.
+Therefore the notion of the language recognized by an observation makes sense, \textit{via} Corollary \ref{indep}.
 
 \define[language of an observation]
 	{Let $\,\phi\in\C O_\Sigma\,$ be an observation over $\,\Sigma\,$.
