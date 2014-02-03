@@ -32,7 +32,8 @@ This actually defines an embedding of the algebraic tensor product of $\ast$-alg
 
 
 \define[unbounded tensor]
-	{Let $\,\C A\,$ be a $\ast$-algebra. We define the $\ast$-algebras $\,\C A^n\,$ for all $\,n\in \BB N\,$ as
+	{\label{unbounded}%
+	Let $\,\C A\,$ be a $\ast$-algebra. We define the $\ast$-algebras $\,\C A^n\,$ for all $\,n\in \BB N\,$ as
 	\[\C A^0:= \BF 1 \quad\text{and}\quad \C A^{n+1}:=\,\C A \tensor \C A^n\]
 	and the $\ast$-algebra $\ \displaystyle\C A^\infty:=\:\bigcup_{\mathclap{n\in N}} \:\C A^n\ $.% and $\ \displaystyle\C A^{\leq N}:=\:\bigcup_{n\in\{\,1,\dots,N\,\}}^N \:\C A^n\ $.
 }
@@ -50,6 +51,11 @@ We also write $\,1_k:=\Id_{\{1,\dots,k\}}\in \F S_k\,$.}
 	We will omit the brackets when there is no ambiguity.
 }
 
+A permutation $\,\sigma\in\F S_n\,$ will act on the $\,n\,$ first component of the unbounded tensor product (Definition \ref{unbounded}) by swapping them and leaving the rest unchanged.
+In the above definition, the last $\,y\,$ variable stands for the components that are not affected.
+The wirings $\,[\sigma]\,$ internalize this action.
+
+
 \lemma[representation]
 	{\label{open-represent}For $\,\sigma\in \F S_n\,$ and $\,\tau\in\F S_{n+k}\,$ we have
 	\[[\sigma_{+k}]=[\sigma][1_{n+k}]=[1_{n+k}][\sigma] \qquad
@@ -59,7 +65,6 @@ We also write $\,1_k:=\Id_{\{1,\dots,k\}}\in \F S_k\,$.}
 	\]
 	\vspace{-5mm}
 }
-
 
 \define[permutation algebra]
 	{For $\,n\in \BB N\,$ we set $\:[\F S_n]:=\,\set{[\sigma]}{\sigma \in \F S_n}\,$ and $\,\C S_n:=\,\alg^\dagger[\F S_n]=\vect[\F S_n]\,$.

@@ -43,15 +43,15 @@ By adding a formal element $\,\bot\,$ (representing the failure of unification) 
 	{We call \emph{wirings} $\BB C$-linear combinations (formally: the set of almost-everywhere null functions from $\,\flows\,$ to $\,\BB C\,$) of elements of $\,\flows\,$, endowed with:
 	\[\bigg(\sum_i \lambda_i\,l_i\bigg) \bigg(\sum_j \mu_j\,k_j\bigg):=
 		\:\sum_{\mathclap{\substack{i,j \,\text{ such that} \\ (l_ik_j)\,\text{is defined}}}}\lambda_i\mu_j(l_i\,k_j)\]
-		and
-	\[\bigg(\sum_i \lambda_i\,l_i\bigg)^\dagger:=\:\sum_i \,\overline\lambda_i\,l_i^\dagger
+		
+	\[\text{and\quad} \bigg(\sum_i \lambda_i\,l_i\bigg)^\dagger:=\:\sum_i \,\overline\lambda_i\,l_i^\dagger
 	\qquad\scriptstyle\text{(where }\,\overline\lambda\,\text{ is the complex conjugate of }\,\lambda\,\text{)}
 	\]
 	
 	We write $\,\ualg\,$ the set of wirings and refer to it as the \emph{unification algebra}.
 }
 
-\remark{$\ualg\,$ is indeed a unital $\ast$-algebra: the only delicate point would be the associativity of the product, which is a consequence of lemma \ref{part-unif}.}
+\remark{Indeed, $\ualg\,$ is a unital $\ast$-algebra: the only delicate point would be the associativity of the product, which is a consequence of Lemma \ref{part-unif}.}
 
 \define[partial isometries and orthogonal projections]
 	{\label{piso}A \emph{partial isometry} is a wiring $\,U\,$ satisfying $\,UU^\dagger U=U\,$.% We write $\,\partialisos\,$ the set of \emph{concrete} partial isometries. 
@@ -77,16 +77,17 @@ Isometric wirings enjoy a direct characterisation.
 \theorem[isometric wirings]
 {The isometric wirings are exactly the wirings of the form
 	$\,\sum_i \, u_i \flow t_i\,$
-	with the $\,u_i\,$ pairwise disjoint (definition \ref{disjoint}) and the $\,t_i\,$ pairwise disjoint.
+	with the $\,u_i\,$ pairwise disjoint (Definition \ref{disjoint}) and the $\,t_i\,$ pairwise disjoint.
 }
 
-It will be useful to consider the action of wirings on closed terms. For this purpose we extend definition \ref{flow-action} to wirings.
+It will be useful to consider the action of wirings on closed terms.
+For this purpose we extend Definition \ref{flow-action} to wirings.
 
 \define[action on closed terms]
 	{Let $\,\closedh\,$ be the free $\BB C$-vector space over $\,\closed\,$.
 	
 %	\smallskip
-	Wirings act on base vectors of $\,\closedh\,$ the following way
+	Wirings act on base vectors of $\,\closedh\,$ in the following way
 	\[\bigg(\sum_i \lambda_i\,l_i\bigg)(t) :=\!\sum_{\mathclap{\substack{i \,\text{ such that} \\ l_i(t)\,\text{ is defined}}}}\!\!\lambda_i \big(l_i(t)\big) \ \ \in\: \closedh\]
 	which extends by linearity into an action on the whole $\,\closedh\,$.
 }
@@ -94,4 +95,5 @@ It will be useful to consider the action of wirings on closed terms. For this pu
 Note that isometric wirings have a particular behaviour in terms of this action.
 
 \lemma[isometric action]
-{\label{lem_isom}Let $\,F\,$ be a isometric wiring and $\,t\,$ a closed term. We have that $\,F(t)\,$ and $\,F^\dagger(t)\,$ are either $\,0\,$ or another closed term $\,t'\,$ (seen as an element of $\,\closedh\,$).}
+{\label{lem_isom}Let $\,F\,$ be an isometric wiring and $\,t\,$ a closed term.
+We have that $\,F(t)\,$ and $\,F^\dagger(t)\,$ are either $\,0\,$ or another closed term $\,t'\,$ (seen as an element of $\,\closedh\,$).}

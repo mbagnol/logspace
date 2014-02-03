@@ -1,17 +1,17 @@
-\textbf{Proof theory and complexity theory.} Since the introduction of so-called light logics \cite{girard_light_1994}, several author contributed to the topic of implicit complexity theory using tools coming from proof theory and more specifically linear logic \cite{girard_linear_1987}.
+\textbf{Proof theory and complexity theory.} Since the introduction of so-called light logics \cite{girard_light_1994}, several authors contributed to the topic of implicit complexity theory using tools coming from proof theory and more specifically linear logic \cite{girard_linear_1987}.
 
 The study of geometrical properties of proofnets \cite{girard_linear_1987}, in terms for instance of stratitification of exponential boxes \cite{baillot_linear_2010} led to a clearer understanding of the time complexity of the cut-elimination procedure. Space complexity has also been studied from this perspective \cite{schopp_stratified_2007,gaboardi_logical_2008}.
 
 \smallskip\noindent
-\textbf{Geometry of Interaction.} As the study of cut-elimination has grown as a central topic in proof theory, its mathematical modelling became of great interest. The Geometry of Interaction \cite{girard_towards_1989} research program led to models of cut-elimination in terms of paths in proofnets \cite{asperti_paths_1994}, token machines \cite{laurent_token_2001} and operator algebras \cite{girard_geometry_1989,girard_geometry_2005}.%2005?
+\textbf{Geometry of Interaction.} As the study of cut-elimination has grown as a central topic in proof theory, its mathematical modelling became of great interest. The Geometry of Interaction \cite{girard_towards_1989} research program led to models of cut-elimination in terms of paths in proofnets \cite{asperti_paths_1994}, token machines \cite{laurent_token_2001} and operator algebras \cite{girard_geometry_1989}.
 The relationship of these ideas with complexity theory has also been investigated \cite{schopp_space-efficient_2006,baillot_elementary_2001}.
 
 The tools shaped by this approach have also been used to study directly complexity theory from an algebraic point of view \cite{girard_normativity_2012,aubert_characterizing_2012,seiller_logarithmic_2013}. These works are the main source of inspiration for this article.
 
 \smallskip\noindent
-\textbf{Unification.} The unification technique has been used in \cite{girard_geometry_1995,baillot_elementary_2001,girard_three_lightings} to provide a setting where one can model the cut-elimination procedure in a finitary way: first-order terms with variables offer a way to manipulate infinite sets (of instances of terms) with a finite language.
+\textbf{Unification.} The unification technique has been used \cite{girard_geometry_1995,baillot_elementary_2001,girard_three_lightings} to provide a setting where one can model the cut-elimination procedure in a finitary way: first-order terms with variables offer a way to manipulate infinite sets (of instances of terms) with a finite language.
 
-It turns out that this language is expressive enough to encode various algebraic structures, including a notion of unbounded tensor product and a representation of finite permutation groups. These were provided by the use of the theory of von Neumann algebras in \cite{girard_normativity_2012,aubert_characterizing_2012,seiller_logarithmic_2013}.
+It turns out that this language is expressive enough to encode various algebraic structures, including a notion of unbounded tensor product and a representation of finite permutation groups. These were provided by the use of the theory of von Neumann algebras \cite{girard_normativity_2012,aubert_characterizing_2012,seiller_logarithmic_2013}.
 
 \smallskip\noindent
 \textbf{Pointer machines.} The study of space efficient computations lead to consider pointer machines as a mathematical model of computing \cite{hofmann_pointer_2009}.%,hofmann_pure_2010}.
@@ -20,11 +20,10 @@ In \cite{girard_normativity_2012}, how operators simulate computation is briefly
 
 %We introduce here a notion of pointer machine that is specifically designed to be easily translated into 
 
-
 \smallskip\noindent
 \textbf{Organisation of this article.} In Sect.\ref{sec_unification} we review some classical results on unification of first-order terms and use them to build the algebra that will constitute our computationnal setting.
 
 We explain in Sect.\ref{sec_words} how words and computing devices (observations) can be modeled by particular elements of this algebra.
 The way they interact to yield a notion of language recognized by an observation is described in Sect.\ref{sec_normativity}.
 
-Finally, we show in Sect.\ref{sec_logspace} that our construction captures exactly logarithmic space computation, and we relate it with a notion of pointer machine.
+Finally, we show in Sect.\ref{sec_logspace} that our construction captures exactly logarithmic space computation, both deterministic and non-deterministic.

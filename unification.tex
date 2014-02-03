@@ -1,27 +1,27 @@
 Unification can be generally thought of the study of formal solving of equations between terms.
 
-This topic was introduced by Herbrand, but became really widespread after the work of J.~A.~Robinson on automated theorem proving \cite{robinson_machine-oriented_1965}.
+This topic was introduced by Herbrand, but became really widespread after the work of J.~A.~Robinson on automated theorem proving.
 The unification technique is also at the core of the logic programming language \textsc{Prolog} and type inference for functional programming languages such as \textsc{CaML} and \textsc{Haskell}.
 
 %\subsubsection*{Terms and substitutions}
 
 Specifically, we will be interested in the following problem: 
 \begin{center}
-	\it Given two (first-order) terms,\\ can they be “made equal” by replacing their variables?
+	\it Given two terms, can they be “made equal” by replacing their variables?
 \end{center}
-
-To make things more concrete, we set a specific set of terms for the rest of this article.
-
+\vspace{-1mm}
+% Compacte
+%To make things more concrete, we set a specific set of terms for the rest of this article.
 \define[terms]
 	{We consider the following set of first-order terms
-	
+% Compacte
 	\[\terms::=\ \ x,y,z,\:\dots\ |\ \TT a,\tt b,\tt c,\:\dots\ |\ \terms\p\terms\]
-	
+% Compacte	
 	where  $\,x,y,z,\:\dots\in \vars\,$ are variables and $\,\TT a,\TT b,\TT c,\:\dots\,$ are constants, while $\,\p\,$ is a binary function symbol.
 
 \smallskip
 For any $\,t\in\terms\,$, we will write $\,\var(t)\,$ the set of variables occuring in $\,t\,$.
-We say that a term is closed whenever $\,\var(t)=\varnothing\,$, and denote the set of closed terms as $\,\closed\,$. 
+We say that a term is closed when $\,\var(t)=\varnothing\,$, and denote $\,\closed\,$ the set of closed terms. 
 }
 
 \notation{We will write the binary function symbol as \emph{right associating} to avoid an excess of parenthesis: $\:t\p u\p v \::=\:t\p(u\p v) \,$}
@@ -76,9 +76,9 @@ To allow easier manipulation, the problem of unifying \emph{two} terms needs to 
 	\[u_i.\theta=t_i.\theta\ \text{ for all }\,i\]
 		In particular, we say that two terms $\,t,u\,$ are \emph{unifiable} if there exists a substitution $\,\theta\,$ such that $\,t.\theta=u.\theta\,$.
 		
-	$\theta\,$ is a \emph{most general unifier (MGU) of $\,P\,$} if any other unifier is an instance of~$\,\theta\,$.
+	We say that $\theta\,$ is a \emph{most general unifier (MGU) of $\,P\,$} if any other unifier of $\,P\,$ is an instance of $\,\theta\,$.
 }
-\vspace{-5mm}
+%\vspace{-5mm}
 
 \remark{It follows from Theorem \ref{folklore} that any two MGU of the same unification problem are equal up to renaming.}
 
@@ -127,24 +127,26 @@ In that case, we have moreover that $\,\theta;\psi\,$ is a MGU of $\,P\,$.
 
 %Herbrand's original procedure for solving unification was non-deterministic.
 
-J.~A.~Robinson was the first to prove the existence of MGU for two unifiable terms and derived from this a deterministic unification procedure.
-His original procedure was however quite inefficient, with potential exponential blowups in some cases. 
+%J.~A.~Robinson was the first to prove the existence of MGU for two unifiable terms and derived from this a deterministic unification procedure.
+%His original procedure was however quite inefficient, with potential exponential blowups in some cases. 
+
+%\smallskip
+%It turns out that the general unification problem can be solved in linear time, which was discovered independently in \cite{paterson_linear_1978} and \cite{martelli_unification_1976}, improving on the almost-linear algorithms thus far designed.
+
+%\smallskip
+%Unification was first thought to be a \textsc{NLogspace}-complete problem. However, an error was eventually found in the note \cite{lewis_unifiability_1982} claiming this fact, which eventually led to a determination of the intrinsic complexity of the problem: unification is indeed \textsc{Ptime}-complete under logarithmic space reductions \cite{dwork_sequential_1984}.
+
+As unification grew in importance, the study of its complexity gained in attention.
+A complete survey \cite{knight_unification_1989} tells the story of the bounds getting sharpened: general first-order unification was finally proved \cite{dwork_sequential_1984} to be a \textsc{Ptime}-complete problem.
 
 \smallskip
-It turns out that the general unification problem can be solved in linear time, which was discovered independently in \cite{paterson_linear_1978} and \cite{martelli_unification_1976}, improving on the almost-linear algorithms thus far designed.
-
-\smallskip
-Unification was first thought to be a \textsc{NLogspace}-complete problem. However, an error was eventually found in the note \cite{lewis_unifiability_1982} claiming this fact, which eventually led to a determination of the intrinsic complexity of the problem: unification is indeed \textsc{Ptime}-complete under logarithmic space reductions \cite{dwork_sequential_1984}.
-
-\medskip
 In this article, we are concerned with a very much simpler case of the problem: the matching (definition \ref{disjoint}) of linear terms (\textit{ie.} where variables occur at most once).
 This case can be solved in a space-efficient way.
 
-\theorem[logarithmic space {\cite[lemma 20]{dwork_parallel_1988}}]
-{\label{unif-logspace}Wether two linear terms $\,t,u\,$ with disjoint sets of variables are unifiable, and if so finding a MGU, can be computed in logarithmic space on a deterministic Turing machine.
-
-\smallskip
-Moreover, their MGU is of size at most the sum of the sizes of $\,t\,$ and $\,u\,$.
+\theorem[matching in logarithmic space {\cite[Lemma 20]{dwork_parallel_1988}}]
+{\label{unif-logspace}Wether two linear terms $\,t,u\,$ with disjoint sets of variables are unifiable, and if so finding a MGU, can be computed in logarithmic space in the size\footnote{The \emph{size} of a term is the total number of occurences of symbols in it.} of $\,t, u\,$ on a deterministic Turing machine 
+%\smallskip
+%Moreover, their MGU is of size at most the sum of the sizes of $\,t\,$ and $\,u\,$.
 }
 
-The lemma in the article actually states that the problem is in \textsc{NC}\up 1, a complexity class of parallel computations known to be included in \textsc{Logspace}.
+The lemma in the article actually states that the problem is in \textsc{NC}\up 1, a complexity class of parallel computation known to be included in \textsc{Logspace}.

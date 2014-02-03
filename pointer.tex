@@ -1,9 +1,9 @@
 To prove the converse of Theorem \ref{soundness}, we prove that wirings can encode a special kind of read-only multi-heads Turing Machines: pointers machines.
 The definition of this model will be guided by our understanding of the computation represented in wirings.
 It will scan the input without the ability to store anything else than the \emph{positions} of its \emph{pointers} and the current state.
-Acceptation will be defined as the opposite of looping, and it is natural to see the course of the computation as universally non-deterministic.
+%Acceptation will be defined as the opposite of looping, and it is natural to see the course of the computation as universally non-deterministic.
 
-Thoses modifications does not enhance nor lower the computational power of our devices, they just need to be properly tamed, to get back to a model close to Multi-Head Finite Automata and be able to decide any {\sc Logspace}-language.
+Theses specificities do not enhance nor lower the computational power of our device, they just need to be properly tamed, to get back to a model close to Multi-Head Finite Automata and be able to decide any {\sc Logspace}-language.
 For a survey of this topic, one may consult \cite[Chap.4]{Aubert2013b}, the main novelty of this work is to prove that deterministic computation is represented by reversible operators.
 
 %This model of computation can naturally be conceived as read-only multi-heads Turing Machines, or as Multi-Head Finite Automata: our device will scan the input without the ability to store anything else than the \emph{positions} of its \emph{pointers} and the current state.
@@ -33,8 +33,8 @@ An auxiliary pointer will be able to become the main pointer along the computati
 {Given the length $\,n\,$ of a word $\,W=\start\TT c_1\dots \TT c_n\,$ over $\,\Sigma\,$ and a pointer machine $\,M=(N,\TT S,\Delta)\,$, a \emph{configuration} of $\,(M,n)\,$ is an element of 
 \[\,\TT S\times\Sigma\times\IO\times\{0,1,\dots,n\}^N\,\]}
 
-As usual, the element of $\,\TT S\,$ is the state the machine is in and the elements of $\,\Sigma\,$ is the letter the main pointer points at.
-The element of $\,\IO\,$ is the direction of the next move of the main pointer, and the element of $\,\{0,1,\dots,n\}^N\,$ correspond to the positions of the (main and auxiliary)  pointers on the input.
+As usual, the element of $\,\TT S\,$ is the state of the machine and the element of $\,\Sigma\,$ is the letter the main pointer points at.
+The element of $\,\IO\,$ is the direction of the next move of the main pointer, and the elements of $\,\{0,1,\dots,n\}^N\,$ correspond to the positions of the (main and auxiliary)  pointers on the input.
 
 \smallskip
 
@@ -42,8 +42,7 @@ As the input tape is considered cyclic with a special symbol marking the beginni
 
 \define[transition]
 {Let $\,W\,$ be a word and $\,M=(N,\TT S,\Delta)\,$ be a pointer machine.
-We define $\,M(W)\,$ to be $\,M\,$ with $\,W\,$ written on its input state, all its pointers on $\,\star\,$  and in some pre-defined \emph{inital state}.
-A \emph{transition} of $\,M(W)\,$ is a triple of configurations
+A \emph{transition} of $\,M\,$ on input $\,W\,$ is a triple of configurations
 \[s,\TT c,\TT d,(p_1,\dots,p_N) \trans{\TT{MOVE}}{} s,\TT c',\overline{\TT d},(p_1',\dots,p_N') \trans{\TT{SWAP}}{} s',\TT c'',\TT d',(p_{\sigma(1)}',\dots,p_{\sigma(N)}') \]
 such that
 \begin{enumerate}
@@ -61,7 +60,7 @@ In terms of observations, the \texttt{MOVE} phase corresponds to the application
 %The point is that it is possible to implement that maintainance using the states of the machine (typically, add a store for the values of the pointers, which has finitely many configurations, to the state of the machine), and therefore we favor the simpler and more liberal definition.
 
 \define[acceptation]
-{\label{translate}We say that $\,M(W)\,$ accepts if any sequence of transitions $\,\big(C_i\trans{\TT{MOVE}}{}C_i'\trans{\TT{SWAP}}{}C_i''\big)\,$ of $\,M(W)\,$ such that $\,C''_i=C_{i+1}\,$ for all $\,i\,$ is necessarily finite.
+{\label{translate}We say that $\,M\,	$ accepts $\,W\,$ if any sequence of transitions $\,\big(C_i\trans{\TT{MOVE}}{}C_i'\trans{\TT{SWAP}}{}C_i''\big)\,$ such that $\,C''_i=C_{i+1}\,$ for all $\,i\,$ is necessarily finite.
 
 We write $\,\lang(M)\,$ the set of words accepted by $\,M\,$.}
 
@@ -83,7 +82,7 @@ It is well-known that (non-)Deterministic Multi-Head Finite Automata characteriz
 It takes little effort to see that our pointer machines are just a reasonnable rearrangement of Multi-Head Finite Automata: that only one pointer may move does not lower the computational power of our device since it is always possible to switch the rôle of the pointers.
 We can get back to the expected notion of transition by encoding into the states the values that can be read by the pointers.
 
-That acceptation and rejections are \enquote{reversed} is harmless in the deterministic (or equivalently reversible \cite{Lange2000}) case, and uses that {\sc co-NLogspace = NLogspace} \cite{Immerman1988} to get the expected result in the non-deterministic case.
+That acceptation and rejections are \enquote{reversed} is harmless in the deterministic (or equivalently reversible \cite{Lange2000}) case, and uses that {\sc co-NLogspace = NLogspace} to get the expected result in the non-deterministic case.
 }
 
 As we said, our pointer machines are designed to be easily simulated by wirings, so that we get the expected result almost for free.
