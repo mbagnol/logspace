@@ -7,30 +7,31 @@ X Citer unification as a complexity measure for logic …, 3 lightings of logic.
 X Soundness, ligne 57, préciser les tailles des constantes C et L ?
 X Parler de weak unification ? -> non
 X Un mot sur vnA dans intro.
-
-* Ajouter un mot NL = co-NL.
-* Revoir réf. pointeur machine, indiquer que d sert à marquer la direction, l’entrée / sortie, dire que le rejet = ne pas accepter, détailler / donner réf. / reformuler le « It turns out that pointer machines are expressive enough to solve any \textsc{(N)Logspace} problem », appartenance à une classe de complexité pas déf.
-* Conclusion généralement à revoir (« in the relation to pointer machines » : « to mimic computation » ?)
-* Revoir la biblio (tout compte fait, citer Herbrand dans un article de conf, c'est pas un peu prétentieux?)
-* Soundness, ajouter un mot à la fin pour dire la correspondance entre unification qui « progresse » et étapes de calcul ?
-* Conf. ne dépends pas de l’entrée.
-* Plus de complexité -- unification dans l’intro.
-* Dire preuve thm 34 que clôture / variable -> pas de pb.
-* Revoir les paragraphes qui suivent le lemme 8. Not. pour dire « on va calculer avec ». Ou début section suivante ?
-* Préciser pour taille d’un terme / d’un mot / d’une entrée ?
-* Insister sur l’innovation en règle général.
-* Remettre les pdfinfos
-* Gérer bogue espace (cf. Theorem 4 .)
-* Nom Theorem 9 (logarithmic space [24, lemma 20]). à revoir
-* Reformuler Observations will stand for the machines accepting and refusing words. They lie
-* Revoir paragraphe We are going to define the way observations accept
-* Mettre dans une ligne 
+X Ajouter un mot NL = co-NL.
+X Revoir réf. pointeur machine, indiquer que d sert à marquer la direction, l’entrée / sortie, dire que le rejet = ne pas accepter, détailler / donner réf. / reformuler le « It turns out that pointer machines are expressive enough to solve any \textsc{(N)Logspace} problem », appartenance à une classe de complexité pas déf.
+X Conf. ne dépends pas de l’entrée.
+X Dire preuve thm 34 que clôture / variable -> pas de pb.
+X Revoir les paragraphes qui suivent le lemme 8. Not. pour dire « on va calculer avec ». Ou début section suivante ?
+X Préciser pour taille d’un terme / d’un mot / d’une entrée ?
+X Insister sur l’innovation en règle général.
+X Nom Theorem 9 (logarithmic space [24, lemma 20]). à revoir
+X Reformuler Observations will stand for the machines accepting and refusing words. They lie
+X Revoir paragraphe We are going to define the way observations accept
+X Mettre dans une ligne 
 \vbox{	\begin{itemize}
 		\item $\varphi(FG)=\varphi(F)\varphi(G)$
 		\item $\varphi(F^\dagger)=\varphi(F)^\dagger$
 		\item $\varphi$ is injective
 	\end{itemize}}
-* Virer Lewis, H.R., Statman, R.: Unifiability is complete for co-NLogSpace. Inf. Process.
-* Dans alto, dire "pick" est non-det.
-* \footnote{%
-To encode Turing Machines in unification and to relates computation steps to steps of unification was already done for instance in \cite{Itai1987}, but this latter was about calculability, and did not really took into account complexity.}%
+X Virer Lewis, H.R., Statman, R.: Unifiability is complete for co-NLogSpace. Inf. Process.
+X Dans alto, dire "pick" est non-det.
+
+
+
+* Conclusion généralement à revoir (« in the relation to pointer machines » : « to mimic computation » ?)
+* Revoir la biblio (tout compte fait, citer Herbrand dans un article de conf, c'est pas un peu prétentieux?)
+* Soundness, ajouter un mot à la fin pour dire la correspondance entre unification qui « progresse » et étapes de calcul ?
+* Plus de complexité -- unification dans l’intro.
+* Remettre les pdfinfos
+* Gérer bogue espace (cf. Theorem 4 .)
+* To encode Turing Machines in unification and to relates computation steps to steps of unification was already done for instance in \cite{Itai1987}, but this latter was about calculability, and did not really took into account complexity.
