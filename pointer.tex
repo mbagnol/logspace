@@ -1,10 +1,9 @@
 To prove the converse of Theorem \ref{soundness}, we prove that wirings can encode a special kind of read-only multi-heads Turing Machines: pointers machines.
-The definition of this model will be guided by our understanding of the computation represented in wirings.
-It will scan the input without the ability to store anything else than the \emph{positions} of its \emph{pointers} and the current state.
+The definition of this model will be guided by our understanding of the computation of wirings: they won't have the ability to write and acceptation will be defined as termination of all paths of computation.
+%It will scan the input without the ability to store anything else than the \emph{positions} of its \emph{pointers} and the current state.
 %Acceptation will be defined as the opposite of looping, and it is natural to see the course of the computation as universally non-deterministic.
-
-Theses specificities do not enhance nor lower the computational power of our device, they just need to be properly tamed, to get back to a model close to Multi-Head Finite Automata and be able to decide any {\sc Logspace}-language.
-For a survey of this topic, one may consult \cite[Chap.4]{Aubert2013b}, the main novelty of this work is to prove that deterministic computation is represented by reversible operators.
+%Theses specificities do not enhance nor lower the computational power of our device, they just need to be properly tamed, to get back to a model close to Multi-Head Finite Automata and be able to decide any {\sc Logspace}-language.
+For a survey of this topic, one may consult the first author's thesis \cite[Chap.4]{Aubert2013b}, the main novelty of this work is to prove that deterministic computation is represented by reversible operators.
 
 %This model of computation can naturally be conceived as read-only multi-heads Turing Machines, or as Multi-Head Finite Automata: our device will scan the input without the ability to store anything else than the \emph{positions} of its \emph{pointers} and the current state.
 %We will slightly modify this classical device, to ease the encoding as wirings: only one pointer will have the ability to move on the input, and a second step of computation will allow to sitch the position of two pointers.
@@ -32,7 +31,7 @@ An auxiliary pointer will be able to become the main pointer along the computati
 \define[configuration]
 {Given the length $\,n\,$ of a word $\,W=\start\TT c_1\dots \TT c_n\,$ over $\,\Sigma\,$ and a pointer machine $\,M=(N,\TT S,\Delta)\,$, a \emph{configuration} of $\,(M,n)\,$ is an element of 
 \[\,\TT S\times\Sigma\times\IO\times\{0,1,\dots,n\}^N\,\]}
-
+%Compacte
 As usual, the element of $\,\TT S\,$ is the state of the machine and the element of $\,\Sigma\,$ is the letter the main pointer points at.
 The element of $\,\IO\,$ is the direction of the next move of the main pointer, and the elements of $\,\{0,1,\dots,n\}^N\,$ correspond to the positions of the (main and auxiliary)  pointers on the input.
 
@@ -54,7 +53,7 @@ such that
 \end{enumerate}
 }
 There is no constraint on $\,c''\,$, but every time this value differs from the letter pointed by $\,p_{\sigma(1)}'\,$, the computation will halt on the next \texttt{MOVE} phase, because there is a mismatch between the value that is supposed to have been read and the actual bit of $\,W\,$ stored at this position, and that would contradict the first part of item \ref{condition}.
-In terms of observations, the \texttt{MOVE} phase corresponds to the application of the word, whereas the \texttt{SWAP} phase corresponds to the application of the observation.
+In terms of wirings, the \texttt{MOVE} phase corresponds to the application of the word, whereas the \texttt{SWAP} phase corresponds to the application of the observation.
 
 %Note that the maintenance of $\,\TT c''\,$ as the letter pointed to by the (new) main pointer is not required at the \texttt{SWAP} phase, which will cause most computation to stop unexpectedly.
 %The point is that it is possible to implement that maintainance using the states of the machine (typically, add a store for the values of the pointers, which has finitely many configurations, to the state of the machine), and therefore we favor the simpler and more liberal definition.
@@ -65,8 +64,8 @@ In terms of observations, the \texttt{MOVE} phase corresponds to the application
 We write $\,\lang(M)\,$ the set of words accepted by $\,M\,$.}
 
 This means informally that we consider that a pointer machine accepts a word if it cannot ever loop, from whatever configuration it starts from.
-To retrieve computation as one could expect it, it is necessary to write programs with a lot of guesses on the values to be read, to store some information in the configurations and to keep in mind that the number of configurations can always be bounded.
-That a lot of path of computations accepts \enquote{wrongly} is no worry, since only rejection is meaningful: our pointer machines compute in a \enquote{universally non-deterministic} way to stick to the acceptance condition of wirings, nilpotency.
+%To retrieve computation as one could expect it, it is necessary to write programs with a lot of guesses on the values to be read, to store some information in the configurations and to keep in mind that the number of configurations can always be bounded.
+That a lot of paths of computation accepts \enquote{wrongly} is no worry, since only rejection is meaningful: our pointer machines compute in a \enquote{universally non-deterministic} way to stick to the acceptance condition of wirings, nilpotency.
 
 %Of course, this rather unusual acceptance condition is given with the acceptance condition of wirings in mind: nilpotency.
 %As a side-effect, it gives evidences that our pointer machines compute in a \enquote{universally non-deterministic} way.
@@ -78,9 +77,10 @@ That a lot of path of computations accepts \enquote{wrongly} is no worry, since 
 Moreover, if $\,L\in \text{\sc Logspace}\,$ then $\,M\,$ can be chosen to be reversible.
 }
 \proof[sketch]{%
-It is well-known that (non-)Deterministic Multi-Head Finite Automata characterize {\sc (N)Logspace} \cite{Hartmanis1972}.
-It takes little effort to see that our pointer machines are just a reasonnable rearrangement of Multi-Head Finite Automata: that only one pointer may move does not lower the computational power of our device since it is always possible to switch the rôle of the pointers.
-We can get back to the expected notion of transition by encoding into the states the values that can be read by the pointers.
+It is well-known that read-only Turing Machines --~or equivalently (non-)Deterministic Multi-Head Finite Automata~-- characterize {\sc (N)Logspace} \cite{Hartmanis1972}.
+It takes little effort to see that our pointer machines are just a reasonnable rearrangement of this model, since it is always possible to encode some information in the states.
+%Multi-Head Finite Automata: that only one pointer may move does not lower the computational power of our device since it is always possible to switch the rôle of the pointers.
+%We can get back to the expected notion of transition by encoding into the states the values that can be read by the pointers.
 
 That acceptation and rejections are \enquote{reversed} is harmless in the deterministic (or equivalently reversible \cite{Lange2000}) case, and uses that {\sc co-NLogspace = NLogspace} to get the expected result in the non-deterministic case.
 }
