@@ -83,7 +83,7 @@ It is well-known that (non-)Deterministic Multi-Head Finite Automata characteriz
 It takes little effort to see that our pointer machines are just a reasonnable rearrangement of Multi-Head Finite Automata: that only one pointer may move does not lower the computational power of our device since it is always possible to switch the rôle of the pointers.
 We can get back to the expected notion of transition by encoding into the states the values that can be read by the pointers.
 
-That acceptation and rejections are \enquote{reversed} is harmless in the deterministic (reversible) case, and uses that {\sc co-NLogspace = NLogspace} \cite{Immerman1988} to get the expected result in the non-deterministic case.
+That acceptation and rejections are \enquote{reversed} is harmless in the deterministic (or equivalently reversible \cite{Lange2000}) case, and uses that {\sc co-NLogspace = NLogspace} \cite{Immerman1988} to get the expected result in the non-deterministic case.
 }
 
 As we said, our pointer machines are designed to be easily simulated by wirings, so that we get the expected result almost for free.
