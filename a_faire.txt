@@ -25,13 +25,13 @@ X Mettre dans une ligne
 	\end{itemize}}
 X Virer Lewis, H.R., Statman, R.: Unifiability is complete for co-NLogSpace. Inf. Process.
 X Dans alto, dire "pick" est non-det.
+X Gérer bogue espace (cf. Theorem 4 .)
+X Revoir la biblio (tout compte fait, citer Herbrand dans un article de conf, c'est pas un peu prétentieux?)
 
 
-
+* Revoir "Actually, this results stands for the complementary of these languages, but as co-NLogspace = NLogspace by the Immerman-Szelepcsényi theorem, this is harmless."
 * Conclusion généralement à revoir (« in the relation to pointer machines » : « to mimic computation » ?)
-* Revoir la biblio (tout compte fait, citer Herbrand dans un article de conf, c'est pas un peu prétentieux?)
 * Soundness, ajouter un mot à la fin pour dire la correspondance entre unification qui « progresse » et étapes de calcul ?
 * Plus de complexité -- unification dans l’intro.
 * Remettre les pdfinfos
-* Gérer bogue espace (cf. Theorem 4 .)
 * To encode Turing Machines in unification and to relates computation steps to steps of unification was already done for instance in \cite{Itai1987}, but this latter was about calculability, and did not really took into account complexity.
