@@ -7,7 +7,7 @@ The unification technique is also at the core of the logic programming language 
 
 Specifically, we will be interested in the following problem: 
 \begin{center}
-	\it Given two terms, can they be “made equal” by replacing their variables?
+	\it Given two terms, can they be \enquote{made equal} by replacing their variables?
 \end{center}
 \vspace{-1mm}
 % Compacte
@@ -20,7 +20,7 @@ Specifically, we will be interested in the following problem:
 	where  $\,x,y,z,\:\dots\in \vars\,$ are variables and $\,\TT a,\TT b,\TT c,\:\dots\,$ are constants, while $\,\p\,$ is a binary function symbol.
 
 \smallskip
-For any $\,t\in\terms\,$, we will write $\,\var(t)\,$ the set of variables occuring in $\,t\,$.
+For any $\,t\in\terms\,$, we will write $\,\var(t)\,$ the set of variables occurring in $\,t\,$.
 We say that a term is closed when $\,\var(t)=\varnothing\,$, and denote $\,\closed\,$ the set of closed terms. 
 }
 
@@ -34,7 +34,7 @@ We say that a term is closed when $\,\var(t)=\varnothing\,$, and denote $\,\clos
 	A substitution with domain $\,\{\,x_1,\dots,x_n\,\}\,$ such that $\,\theta(x_1)=u_1\,,\,\dots\,,\,\theta(x_n)=u_n\,$ will be written as $\,\{\:x_1\mapsto u_1\,;\,\dots\,;\, x_n\mapsto u_n\:\}\,$.
 
 \smallskip
-	If $\,t\in \terms\,$ is a term we write $\,t.\theta\,$ the term $\,t\,$ where any occurence of any variable $\,x\,$ has been replaced by $\,\theta(x)\,$.
+	If $\,t\in \terms\,$ is a term we write $\,t.\theta\,$ the term $\,t\,$ where any occurrence of any variable $\,x\,$ has been replaced by $\,\theta(x)\,$.
 	
 	\smallskip
 	If $\,\theta=\{\:x_i\mapsto u_i\:\}$ and $\,\psi=\{\:y_j\mapsto v_j\:\}\,$, their \emph{composition} is defined as
@@ -102,7 +102,7 @@ The crucial feature of first-order unification is the (decidable) existence of m
 \theorem[MGU]
 {If a unification problem has a unifier, then it has a MGU.
 
-Wether two terms are unifiable and, in case they are, finding a MGU is decidable.}
+Whether two terms are unifiable and, in case they are, finding a MGU is decidable.}
 
 
 Let us note the following fact, that will be useful in the next section: solving a unification problem can be done incrementally.
@@ -144,7 +144,7 @@ In this article, we are concerned with a very much simpler case of the problem: 
 This case can be solved in a space-efficient way.
 
 \theorem[matching in logarithmic space {\cite[Lemma 20]{dwork_parallel_1988}}]
-{\label{unif-logspace}Wether two linear terms $\,t,u\,$ with disjoint sets of variables are unifiable, and if so finding a MGU, can be computed in logarithmic space in the size\footnote{The \emph{size} of a term is the total number of occurences of symbols in it.} of $\,t, u\,$ on a deterministic Turing machine 
+{\label{unif-logspace}Wether two linear terms $\,t,u\,$ with disjoint sets of variables are unifiable, and if so finding a MGU, can be computed in logarithmic space in the size\footnote{The \emph{size} of a term is the total number of occurrences of symbols in it.} of $\,t, u\,$ on a deterministic Turing machine 
 %\smallskip
 %Moreover, their MGU is of size at most the sum of the sizes of $\,t\,$ and $\,u\,$.
 }
