@@ -1,30 +1,34 @@
 We now use the notions we just saw to build an algebra with a product based on unification.
-Let us start with a monoid with a partially defined product, that is the basis of the construction.
+Let us start with a monoid with a partially defined product, which will be the basis of the construction.
 
 \define[flows]
-	{\label{def_flow}A flow is an oriented pair written $\,t\flow u\,$ with $\,t,u\in\terms\,$ such that $\,\var(t)=\var(u)\,$.
+	{\label{def_flow}A \emph{flow} is an oriented pair written $\,t\flow u\,$ with $\,t,u\in\terms\,$ such that $\,\var(t)=\var(u)\,$.
 	
 %	\smallskip
-	Flows are considered up to renaming: for any renaming $\,\alpha\,$ we have $\,t\flow u\,=\,t.\alpha\flow u.\alpha\,$.
+	Flows are considered up to renaming: for any renaming $\,\alpha\,$ we have $$\,t\flow u\,=\,t.\alpha\flow u.\alpha\,$$
 	
 %	\smallskip
 	We will write $\,\flows\,$ the set of (equivalence classes of) flows.
 	
-	We set $\,1:=x\flow x\,$ and $\,(t\flow u)^\dagger:=u\flow t\,$ so that $\,(.)^\dagger\,$ is an involution of $\,\flows\,$.
+	We set $\,\unit:=x\flow x\,$ and $\,(t\flow u)^\dagger:=u\flow t\,$ so that $\,(.)^\dagger\,$ is an involution of $\,\flows\,$.
 	}
 
 A flow $\,t\flow u\,$ can be thought of as a \texttt{ `match ... with u -> t' } in a ML-style language.
-The composition of flows follows intuition.
+The composition of flows follows this intuition.
 
 \define[product of flows]
 	{Let $\,u\flow v\in \flows\,$ and $\,t\flow w\in \flows\,$.
 	Suppose we have chosen two representatives of the renaming classes such that their sets of variables are disjoint.
 
 %\smallskip
-The product of $\,u\flow v\,$ and $\,t\flow w\,$ is defined if $\,v,t\,$ are unifiable with MGU $\,\theta\,$ and in that case
+The \emph{product} of $\,u\flow v\,$ and $\,t\flow w\,$ is defined
+%\footnote{This definition respects equivalence classes of flows because of the fact that MGU are equal up to renaming}
+if $\,v,t\,$ are unifiable with MGU $\,\theta\,$ (the choice of a MGU does not matter because of the remark following Definition~\ref{def_unification}) and in that case
 \[(u\flow v)(t\flow w)\,:=\:u.\theta \flow w.\theta\]
 \vspace{-5mm}
 }
+
+
 
 \define[action on closed terms]
 	{\label{flow-action}If $\,t\in \closed\,$ is a closed term, $\,(u\flow v)(t)\,$ is defined whenever $\,t\,$ and $\,v\,$ are unifiable, with MGU $\,\theta\,$, in that case $\,(u\flow v)(t):=u.\theta\,$
@@ -36,15 +40,15 @@ Moreover, the action is compatible with the product of flows: $\,l(k(t))=(l\,k)(
 }
 
 \medskip
-By adding a formal element $\,\bot\,$ (representing the failure of unification) to the set of flows, one could turn their product in a completely defined operation, making $\,\C F\,$ an \emph{inverse monoid}. However, we will need to consider the algebra of \emph{sums} of flows that is easily defined directly from the partially defined product.
+By adding a formal element $\,\bot\,$ (representing the failure of unification) to the set of flows, one could turn the product in a completely defined operation, making $\,\C F\,$ an \emph{inverse monoid}. However, we will need to consider the algebra of \emph{sums} of flows that is easily defined directly from the partially defined product.
 
 
 \define[wirings]
 	{We call \emph{wirings} $\BB C$-linear combinations (formally: the set of almost-everywhere null functions from $\,\flows\,$ to $\,\BB C\,$) of elements of $\,\flows\,$, endowed with:
 	\[\bigg(\sum_i \lambda_i\,l_i\bigg) \bigg(\sum_j \mu_j\,k_j\bigg):=
 		\:\sum_{\mathclap{\substack{i,j \,\text{ such that} \\ (l_ik_j)\,\text{is defined}}}}\lambda_i\mu_j(l_i\,k_j)\]
-		
-	\[\text{and\quad} \bigg(\sum_i \lambda_i\,l_i\bigg)^\dagger:=\:\sum_i \,\overline\lambda_i\,l_i^\dagger
+	\vspace{-2mm}
+	\[\text{and\qquad} \bigg(\sum_i \lambda_i\,l_i\bigg)^\dagger:=\:\sum_i \,\overline\lambda_i\,l_i^\dagger
 	\qquad\scriptstyle\text{(where }\,\overline\lambda\,\text{ is the complex conjugate of }\,\lambda\,\text{)}
 	\]
 	
@@ -54,9 +58,9 @@ By adding a formal element $\,\bot\,$ (representing the failure of unification) 
 \remark{Indeed, $\ualg\,$ is a unital $\ast$-algebra: the only delicate point would be the associativity of the product, which is a consequence of Lemma \ref{part-unif}.}
 
 \define[partial isometries and orthogonal projections]
-	{\label{piso}A \emph{partial isometry} is a wiring $\,U\,$ satisfying $\,UU^\dagger U=U\,$.% We write $\,\partialisos\,$ the set of \emph{concrete} partial isometries. 
+	{\label{piso}A \emph{partial isometry} is a wiring $\,U\in \ualg\,$ satisfying $\,UU^\dagger U=U\,$.% We write $\,\partialisos\,$ the set of \emph{concrete} partial isometries. 
 
-An \emph{orthogonal projection} is a wiring $\,U\,$ satisfying $\,U^2=U\,$ and $\,U^\dagger=U\,$.
+An \emph{orthogonal projection} is a wiring $\,U\in \ualg\,$ satisfying $\,U^2=U\,$ and $\,U^\dagger=U\,$.
 }
 
 
@@ -88,7 +92,7 @@ For this purpose we extend Definition \ref{flow-action} to wirings.
 	
 %	\smallskip
 	Wirings act on base vectors of $\,\closedh\,$ in the following way
-	\[\bigg(\sum_i \lambda_i\,l_i\bigg)(t) :=\!\sum_{\mathclap{\substack{i \,\text{ such that} \\ l_i(t)\,\text{ is defined}}}}\!\!\lambda_i \big(l_i(t)\big) \ \ \in\: \closedh\]
+	\[\bigg(\sum_i \lambda_i\,l_i\bigg)(t) :=\!\sum_{\mathclap{\substack{i \,\text{ such that} \\ l_i(t)\,\text{ is defined}}}}\lambda_i \big(l_i(t)\big) \ \ \in\: \closedh\]
 	which extends by linearity into an action on the whole $\,\closedh\,$.
 }
 

@@ -13,11 +13,11 @@ Specifically, we will be interested in the following problem:
 % Compacte
 %To make things more concrete, we set a specific set of terms for the rest of this article.
 \define[terms]
-	{We consider the following set of first-order terms
+	{We consider the following set of first-order \emph{terms}
 % Compacte
 	\[\terms::=\ \ x,y,z,\:\dots\ |\ \TT a,\tt b,\tt c,\:\dots\ |\ \terms\p\terms\]
 % Compacte	
-	where  $\,x,y,z,\:\dots\in \vars\,$ are variables and $\,\TT a,\TT b,\TT c,\:\dots\,$ are constants, while $\,\p\,$ is a binary function symbol.
+	where  $\,x,y,z,\:\dots\in \vars\,$ are variables, $\,\TT a,\TT b,\TT c,\:\dots\,$ are constants and $\,\p\,$ is a binary function symbol.
 
 \smallskip
 For any $\,t\in\terms\,$, we will write $\,\var(t)\,$ the set of variables occurring in $\,t\,$.
@@ -30,7 +30,7 @@ We say that a term is closed when $\,\var(t)=\varnothing\,$, and denote $\,\clos
 %Variables in terms are meant to be replaced when needed by a term of the language. This is implemented by the notion of substitution.
 
 \define[substitution]
-	{A substitution is a map $\,\theta:\:\vars \rightarrow \terms\,$ such that the set $\,\dom(\theta):=\{\:v\in \vars\:|\:\theta(v)\not=v\:\}\,$ (the \emph{domain} of $\,\theta\,$) is finite.
+	{A \emph{substitution} is a map $\,\theta:\:\vars \rightarrow \terms\,$ such that the set $\,\dom(\theta):=\{\:v\in \vars\:|\:\theta(v)\not=v\:\}\,$ (the \emph{domain} of $\,\theta\,$) is finite.
 	A substitution with domain $\,\{\,x_1,\dots,x_n\,\}\,$ such that $\,\theta(x_1)=u_1\,,\,\dots\,,\,\theta(x_n)=u_n\,$ will be written as $\,\{\:x_1\mapsto u_1\,;\,\dots\,;\, x_n\mapsto u_n\:\}\,$.
 
 \smallskip
@@ -59,9 +59,9 @@ Two terms $\,t,u\,$ are equal \emph{up to renaming} if there exist a renaming $\
 \theorem%[folklore]
 	{\label{folklore}The following properties hold for any substitutions $\,\theta,\psi\,$:
 	\begin{itemize}%[parsep=0pt]
-		\item The only invertible substitutions are renamings.
+		\item If $\,\theta\,$ is invertible, then it is a renaming
 %		\item Every substitution is equal up to renaming to an idempotent substitution.
-		\item If $\,\theta\,$ is an instance of $\,\psi\,$ and $\,\psi\,$ is an instance of $\,\theta\,$, then they are equal up to renaming.
+		\item If $\,\theta\,$ is an instance of $\,\psi\,$ and $\,\psi\,$ is an instance of $\,\theta\,$, then they are equal up to renaming
 	\end{itemize}
 }
 
@@ -70,7 +70,7 @@ Two terms $\,t,u\,$ are equal \emph{up to renaming} if there exist a renaming $\
 To allow easier manipulation, the problem of unifying \emph{two} terms needs to be generalized into the problem of simultaneously unifying several pairs of terms.
 
 \define[unification]
-	{A \emph{unification problem} is finite set of pair of terms $\,P=\{\:t_i\uequ u_i\:\}\,$.
+	{\label{def_unification}A \emph{unification problem} is finite set of pair of terms $\,P=\{\:t_i\uequ u_i\:\}\,$.
 	
 	It is said to be unifiable if it has a \emph{unifier}: a substitution $\,\theta\,$ such that
 	\[u_i.\theta=t_i.\theta\ \text{ for all }\,i\]
@@ -94,7 +94,7 @@ We will be interested mostly in the weaker variant of unification where one can 
 \example{$x\,$ and $\,\TT f\p x\,$ are not unifiable.
 However they are matchable, as $\,x.\{\,x\mapsto y\,;\,y\mapsto x\,\}=y\,$ which is unifiable with $\,\TT f\p x\,$.
 
-More generally, disjointness is stronger than non-unifyability.}
+More generally, disjointness is stronger than non-unifiability.}
 
 \medskip
 The crucial feature of first-order unification is the (decidable) existence of most general unifiers for unification problems that have a solution.
@@ -140,7 +140,7 @@ As unification grew in importance, the study of its complexity gained in attenti
 A complete survey \cite{knight_unification_1989} tells the story of the bounds getting sharpened: general first-order unification was finally proved \cite{dwork_sequential_1984} to be a \textsc{Ptime}-complete problem.
 
 \smallskip
-In this article, we are concerned with a very much simpler case of the problem: the matching (definition \ref{disjoint}) of linear terms (\textit{ie.} where variables occur at most once).
+In this article, we are concerned with a very much simpler case of the problem: the matching (Definition \ref{disjoint}) of linear terms (\textit{ie.} where variables occur at most once).
 This case can be solved in a space-efficient way.
 
 \theorem[matching in logarithmic space {\cite[Lemma 20]{dwork_parallel_1988}}]
@@ -149,4 +149,4 @@ This case can be solved in a space-efficient way.
 %Moreover, their MGU is of size at most the sum of the sizes of $\,t\,$ and $\,u\,$.
 }
 
-The lemma in the article actually states that the problem is in \textsc{NC}\up 1, a complexity class of parallel computation known to be included in \textsc{Logspace}.
+The lemma in \cite{dwork_parallel_1988} actually states that the problem is in \textsc{NC$^1$}, a complexity class of parallel computation known to be included in \textsc{Logspace}.

@@ -1,6 +1,6 @@
 The representation of words over an alphabet in the unification algebra directly comes from the translation of church lists in linear logic and their interpretation in Geometry of Interaction models~\cite{girard_geometry_1989,girard_geometry_1995}.
 
-This proof-theoretic origin is an useful guide for intuition, even if we give here a more straightforward definition of this notion.
+This proof-theoretic origin is an useful guide for intuition, even if we give here a more straightforward definition of the notion.
 
 \medskip
 From now on, we fix a set of two distinguished constant symbols $\,\IO:=\{\:\o,\i\:\}\,$.
@@ -12,14 +12,14 @@ From now on, we fix a set of two distinguished constant symbols $\,\IO:=\{\:\o,\
 	
 	\smallskip
 	The \emph{word algebra} associated to $\,\Sigma\,$ is the $\ast$-algebra defined as 
-	\[\,\C W_\Sigma:=\BF 1\tensor\Sigma\tensor\IO\tensor(\closed)^1\,\]
-	\vspace{-8mm}
+	\[\,\C W_\Sigma:=\unitalg\tensor\Sigma\tensor\IO\tensor(\closed)^1\,\]
+	\vspace{-6mm}
 }
 
 The words we consider are cyclic, with a begin/end marker $\,\start\,$, a reserved constant symbol.
 For example the word $\,\TT{0010}\,$ is to be thought of as $\,\start\TT{0010}=\TT{01}\!\start\!\TT{00}=\TT0\!\start\!\TT{001}=\cdots\,$.
 
-We consider therefore from now on that the alphabet $\,\Sigma\,$ always contains the symbol $\,\start\,$.
+We consider therefore that the alphabet $\,\Sigma\,$ always contains the symbol $\,\start\,$.
 
 \define[word representation]
 	{\label{words}Let $\,W=\start\TT c_1\dots \TT c_n\,$ be a word over $\,\Sigma\,$ and $\,t_0,t_1,\dots,t_n\,$ be distinct closed terms.
@@ -35,5 +35,5 @@ We consider therefore from now on that the alphabet $\,\Sigma\,$ always contains
 				&+& x\p\TT c_n\p\i\p (t_n\p y) \sflow x\p\start\p\o\p (t_0\p y)
 	\end{array}
 \]
-\vspace{-5mm}
+\vspace{-4mm}
 }
