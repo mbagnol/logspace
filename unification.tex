@@ -6,10 +6,11 @@ The unification technique is also at the core of the logic programming language 
 %\subsubsection*{Terms and substitutions}
 
 Specifically, we will be interested in the following problem: 
+\vspace{-1mm}
 \begin{center}
 	\it Given two terms, can they be \enquote{made equal} by replacing their variables?
 \end{center}
-\vspace{-1mm}
+\vspace{-2mm}
 % Compacte
 %To make things more concrete, we set a specific set of terms for the rest of this article.
 \define[terms]
@@ -56,7 +57,7 @@ Two terms $\,t,u\,$ are equal \emph{up to renaming} if there exist a renaming $\
 %\smallskip A substitution $\,\theta\,$ is \emph{idempotent} if $\,\theta;\theta=\theta\,$.
 }
 
-\theorem%[folklore]
+\proposition%[folklore]
 	{\label{folklore}The following properties hold for any substitutions $\,\theta,\psi\,$:
 	\begin{itemize}%[parsep=0pt]
 		\item If $\,\theta\,$ is invertible, then it is a renaming
@@ -80,7 +81,7 @@ To allow easier manipulation, the problem of unifying \emph{two} terms needs to 
 }
 %\vspace{-5mm}
 
-\remark{It follows from Theorem \ref{folklore} that any two MGU of the same unification problem are equal up to renaming.}
+\remark{It follows from Proposition \ref{folklore} that any two MGU of the same unification problem are equal up to renaming.}
 
 \smallskip
 We will be interested mostly in the weaker variant of unification where one can first rename terms so that they variables are distinct, we introduce therefore a specific vocabulary for it.
@@ -99,7 +100,7 @@ More generally, disjointness is stronger than non-unifiability.}
 \medskip
 The crucial feature of first-order unification is the (decidable) existence of most general unifiers for unification problems that have a solution.
 
-\theorem[MGU]
+\proposition[MGU]
 {If a unification problem has a unifier, then it has a MGU.
 
 Whether two terms are unifiable and, in case they are, finding a MGU is decidable.}
@@ -143,7 +144,7 @@ A complete survey \cite{knight_unification_1989} tells the story of the bounds g
 In this article, we are concerned with a very much simpler case of the problem: the matching (Definition \ref{disjoint}) of linear terms (\textit{ie.} where variables occur at most once).
 This case can be solved in a space-efficient way.
 
-\theorem[matching in logarithmic space {\cite[Lemma 20]{dwork_parallel_1988}}]
+\proposition[matching in logarithmic space {\cite[Lemma 20]{dwork_parallel_1988}}]
 {\label{unif-logspace}Wether two linear terms $\,t,u\,$ with disjoint sets of variables are unifiable, and if so finding a MGU, can be computed in logarithmic space in the size\footnote{The \emph{size} of a term is the total number of occurrences of symbols in it.} of $\,t, u\,$ on a deterministic Turing machine 
 %\smallskip
 %Moreover, their MGU is of size at most the sum of the sizes of $\,t\,$ and $\,u\,$.

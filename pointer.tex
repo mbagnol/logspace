@@ -72,7 +72,7 @@ That a lot of paths of computation accepts \enquote{wrongly} is no worry, since 
 
 %This computational behaviour is suited to be embeded into the wirings, it reflects their wild way of computing, massively non-deterministic: 
 
-\theorem[space completeness]
+\proposition[space and pointer machines]
 {\label{pointerl}If $\,L\in \text{\sc NLogspace}\,$, then there exist a pointer machine $\,M\,$ such that $\,\lang(M)=L\,$.
 Moreover, if $\,L\in \text{\sc Logspace}\,$ then $\,M\,$ can be chosen to be reversible.
 }
@@ -88,13 +88,13 @@ That acceptation and rejections are \enquote{reversed} is harmless in the determ
 \bigskip
 As we said, our pointer machines are designed to be easily simulated by wirings, so that we get the expected result almost for free.
 
-\theorem[simulation]
+\theorem[space completeness]
 {If $\,L\in \text{\sc NLogspace}\,$, then there exist an observation $\,\phi\in\C O_\Sigma\,$ such that $\,\lang(\phi)=L\,$.
 Moreover, if $\,L\in \text{\sc Logspace}\,$ then $\,\phi\,$ is an isometric wiring.
 }
 
 \proof{%
-By Theorem \ref{pointerl}, there exists a pointer machine $\,M=(N,\TT S,\Delta)\,$ such that $\lang(M) = L$.
+By Proposition \ref{pointerl}, there exists a pointer machine $\,M=(N,\TT S,\Delta)\,$ such that $\lang(M) = L$.
 We associate to $\,S\,$ a set of distinct closed terms $\,[\TT S]\,$ and write $\,[s]\,$ the term associated to $\,s\,$.
 To any element $\,D=(s,\TT c,\TT d) \rightarrow (s',\TT c',\TT d') \times \sigma\,$ of $\,\Delta\,$ we associate the flow 
 \[[D]:=([s']\p\TT c'\p\TT d' \flow [s]\p\TT c\p\TT d) \tensor \sigma \:\in[\TT S]\tensor\Sigma\tensor\IO\tensor\C S_n\,\]
