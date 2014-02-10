@@ -1,36 +1,70 @@
-\textbf{Proof theory and complexity theory.} Since the introduction of so-called light logics \cite{girard_light_1994}, several authors contributed to the topic of implicit complexity theory using tools coming from proof theory and more specifically linear logic \cite{girard_linear_1987}.
+\textbf{Proof theory and complexity theory.}
+There is a solid tradition of bridging proof theory --~and more specifically linear logic \cite{girard_linear_1987}~-- and implicit complexity theory that dates back to light logics \cite{girard_light_1994}.
+Control over the modalities \cite{Girard1992,schopp_stratified_2007,Lago2010}% ou \cite{schopp_stratified_2007,Girard1992} ?
+, type assignment \cite{gaboardi_logical_2008} and stratification of exponential boxes \cite{baillot_linear_2010} --~to name a few~-- led to a clearer understanding of the complexity bounds linear logic could entails.
 
-The study of geometrical properties of proofnets \cite{girard_linear_1987}, in terms for instance of stratification of exponential boxes \cite{baillot_linear_2010} led to a clearer understanding of the time complexity of the cut-elimination procedure. Space complexity has also been studied from this perspective \cite{schopp_stratified_2007,gaboardi_logical_2008}.
-
-\smallskip\noindent
-\textbf{Geometry of Interaction.} As the study of cut-elimination has grown as a central topic in proof theory, its mathematical modeling became of great interest.
-The Geometry of Interaction \cite{girard_towards_1989} research program led to models of cut-elimination in terms of paths in proofnets \cite{asperti_paths_1994}, token machines \cite{laurent_token_2001} and operator algebras \cite{girard_geometry_1989}.
-The relationship of these ideas with complexity theory \cite{schopp_space-efficient_2006,baillot_elementary_2001} has also been investigated.
-
-The tools shaped by this approach have also been used to study directly complexity theory from an algebraic point of view \cite{girard_normativity_2012,aubert_characterizing_2012,seiller_logarithmic_2013}.
-These three articles are the main source of inspiration of our work.
+We propose to push further this approach by adopting a more semantical approach that will allow us to capture non-deterministic space-bounded computation.
+%Since the introduction of so-called light logics \cite{girard_light_1994}, several authors contributed to the topic of implicit complexity theory using tools coming from proof theory and more specifically linear logic \cite{girard_linear_1987}.
+%The study of geometrical properties of proofnets \cite{girard_linear_1987}, in terms for instance of stratification of exponential boxes \cite{baillot_linear_2010} led to a clearer understanding of the time complexity of the cut-elimination procedure.
+%Space complexity has also been studied from this perspective \cite{schopp_stratified_2007,gaboardi_logical_2008}.
 
 \smallskip\noindent
-\textbf{Unification.} The unification technique has been used \cite{girard_geometry_1995,baillot_elementary_2001,girard_three_lightings} to provide a setting where one can model the cut-elimination procedure in a finitary way: first-order terms with variables offer a way to manipulate infinite sets (of instances of terms) with a finite language.
+\textbf{Geometry of Interaction.}
+%As the study of cut-elimination has grown as a central topic in proof theory, its mathematical modeling became of great interest.
+%The Geometry of Interaction \cite{girard_towards_1989} research program led to models of cut-elimination in terms of paths in proofnets \cite{asperti_paths_1994}, token machines \cite{laurent_token_2001} and operator algebras \cite{girard_geometry_1989}.
+The Geometry of Interaction \cite{girard_towards_1989} research program led to mathematical models of cut-elimination in terms of paths in proofnets \cite{asperti_paths_1994}, token machines \cite{laurent_token_2001} and operator algebras \cite{girard_geometry_1989}.
+It was already used with complexity concerns \cite{baillot_elementary_2001,girard_normativity_2012} and provided an innovative way of binding proof theory and complexity. 
+%brand new way of  permitted to study logarithmic space computation  from an algebraic point of view .
+%The approach using theory of von Neumann algebras allowed to study logarithmic space computation  from an algebraic point of view \cite{girard_normativity_2012,aubert_characterizing_2012,seiller_logarithmic_2013}.
 
-It turns out that this language is expressive enough to encode various algebraic structures, including a notion of unbounded tensor product and a representation of finite permutation groups.
-These were previously provided by the use of the theory of von Neumann algebras \cite{girard_normativity_2012,aubert_characterizing_2012,seiller_logarithmic_2013}.
+Recent works \cite{aubert_characterizing_2012,seiller_logarithmic_2013} studied in details the link between Geometry of Interaction and logarithmic space obtained thanks to  the theory of von Neumann algebras \cite{girard_normativity_2012}.
+Those three articles are indubitably sources of inspiration of this work, but the whole construction will be made anew, in a simpler framework.
+%: we will borrow the pointer machines of the two latter works as an adapted model where our observations --~representing programs in our setting~-- can be embeded.
+%While several intuitions remains, our approach manage to bypass some difficulties by replacing the theory of von Neumann algebras with a more simpler tool to encode the computation.
+%The relationship of these ideas with complexity theory \cite{schopp_space-efficient_2006,baillot_elementary_2001} has also been investigated.
+%
+%The tools shaped by this approach have also been used to study directly complexity theory from an algebraic point of view \cite{girard_normativity_2012,aubert_characterizing_2012,seiller_logarithmic_2013}.
+%These three articles are the main source of inspiration of our work.
 
 \smallskip\noindent
-\textbf{Pointer machines.} The study of space efficient computations naturally leads to consider pointer machines as a mathematical model of computing.%\cite{hofmann_pointer_2009}.%,hofmann_pure_2010}.
+\textbf{Unification.} 
+%The unification technique has been used \cite{girard_geometry_1995,baillot_elementary_2001,girard_three_lightings} to provide a setting where one can model the cut-elimination procedure in a finitary way: first-order terms with variables offer a way to manipulate infinite sets (of instances of terms) with a finite language.
+Unification is one of the key-concept of theoretical computer science, for it is used in logic programming and is a classical subject of study for complexity theory.
+It was proved \cite{girard_geometry_1995,girard_three_lightings} that one can one can model cut-elimination with unification techniques.
+%On the other hand, steps of unification were already tightly linked to computational steps of a Turing machine \cite{Itai1987}.
+%
+%To encode Turing Machines in unification and to relates computation steps to 
+%as already done for instance in \cite{Itai1987}, but this latter was about calculability, and did not really took into account complexity.
+%\cite{baillot_elementary_2001,girard_three_lightings} to provide a setting where one can model the cut-elimination procedure in a finitary way.
 
-How operators simulate computation has been presented recently \cite{girard_normativity_2012}, and studied more precisely \cite{aubert_characterizing_2012,seiller_logarithmic_2013} thanks to a read-only variant of the Turing Machines, a natural characterization of {\sc Logspace} computation.
+Execution, or cut-elimination, will here be expressed in terms of matching in a \enquote{unification algebra}: we need for the sake of expressivity to encode various algebraic structures, as a kind of unbounded tensor product or finite permutation groups.
+%It turns out that this language is expressive enough to encode various algebraic structures, including a notion of unbounded tensor product and a representation of finite permutation groups.
+%These were previously provided by the use of the theory of von Neumann algebras \cite{girard_normativity_2012,aubert_characterizing_2012,seiller_logarithmic_2013}.
+%
+%\smallskip\noindent
+%\textbf{Pointer machines.}
+%The study of space efficient computations naturally leads to consider pointer machines as a mathematical model of computing.%\cite{hofmann_pointer_2009}.%,hofmann_pure_2010}.
+
+%How operators simulate computation has been presented recently \cite{girard_normativity_2012}, and studied more precisely \cite{aubert_characterizing_2012,seiller_logarithmic_2013} thanks to a read-only variant of the Turing Machines, a natural characterization of {\sc Logspace} computation.
 %In \cite{girard_normativity_2012}, how operators simulate computation is briefly explained in terms of pointer machines, an idea that has been made precise by the later \cite{aubert_characterizing_2012,seiller_logarithmic_2013}.
-
 
 %We introduce here a notion of pointer machine that is specifically designed to be easily translated into 
 
 \medskip
 
 \bigskip\noindent
-\textbf{Contribution.} We carry on the methodology of bridging Geometry of Interaction and pointer machines, but we give a simpler presentation based on unification that does not rely on the theory of von Neumann algebras.
+\textbf{Contribution.}
+We carry on the methodology of bridging Geometry of Interaction and complexity theory with a novel approach.
+This work lays the foundation of a new correspondance between unification, geometry of interaction and complexity.
+It relies on an innovative representation of cut-elimination in a unification algebra, proved to be of logarithmic space complexity.
 
-Moreover, we show that in the deterministic case, reversibility (of machines) is related to the algebraic notion of isometricity (of observations).
+While the representation of inputs --~words over a finite alphabet~-- comes from the classical Church representation of numerals, our observations --~or programs~-- remain black boxes, defined semantically.
+Hence, we manage to \enquote{open this black box} by exhibiting a model of computation, pointer machines, where operators embed easilly.
+This new correspondence between execution and normalization allow us to prove that the deterministic case, reversibility (of machines) is related to the algebraic notion of isometricity (of observations).
+
+%we give a simpler presentation based on unification that does not rely on the theory of von Neumann algebras.
+
+%Moreover, we show that in the deterministic case, reversibility (of machines) is related to the algebraic notion of isometricity (of observations).
 
 %\bigskip\noindent
 %\textbf{Contribution.} We carry on the methodology of \cite{girard_normativity_2012,aubert_characterizing_2012,seiller_logarithmic_2013}, but we give a simpler presentation based on unification that does not rely on the theory of von Neumann algebras. 
@@ -43,3 +77,4 @@ We explain in Sect.\ref{sec_words} how words and computing devices (observations
 The way they interact to yield a notion of language recognized by an observation is described in Sect.\ref{sec_normativity}.
 
 Finally, we show in Sect.\ref{sec_logspace} that our construction captures exactly logarithmic space computation, both deterministic and non-deterministic.
+
