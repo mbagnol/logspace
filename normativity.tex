@@ -1,12 +1,14 @@
 We are going to define how observations accept and reject words.
-This needs a discussion, because there is an issue with word representations: an observation is an element of $\,\ualg\,$ and can therefore only interact with \emph{representations} of a word, and there are many possible representation of the same word (in Definition \ref{words}, different choices of closed terms lead to different representations).
+This needs a discussion, because there is an issue with word representations: an observation is an element of $\,\ualg\,$ and can therefore only interact with \emph{representations} of a word, and there are many possible representation of the same word (in Definition \ref{words}, different choices of closed terms lead to different representations). Therefore one has to ensure that acceptation or rejection is independent of the representation, so that the notion makes the intended sense.
 
-Therefore one has to ensure that acceptation or rejection is independent of the representation, so that the notion makes the intended sense.
+The termination of computations will correspond to the algebraic notion of \emph{nilpotency}, which we recall here.
 
+\define[nilpotency]
+{A wiring $\,W\,$ is \emph{nilpotent} if $\,W^n=0\,$ for some $\,n\,$.}
+%\vspace{-2mm}
 \define[automorphism]
-	{An \emph{automorphism} of a $\ast$-algebra $\,\C A\,$ is a linear application $\,\varphi\,:\: \C A\rightarrow\C A\,$ such that for all~$\,F,G\in\C A\,$
-	\[\varphi(FG)=\varphi(F)\varphi(G) \qquad \varphi(F^\dagger)=\varphi(F)^\dagger \qquad \text{and }
-	\qquad\varphi\,\text{ is injective}\]
+	{An \emph{automorphism} of a $\ast$-algebra $\,\C A\,$ is a linear application $\,\varphi\,:\: \C A\rightarrow\C A\,$ such that for all~$\,F,G\in\C A\,$: $\:\varphi(FG)=\varphi(F)\varphi(G)\,$, $\,\varphi(F^\dagger)=\varphi(F)^\dagger\,$ and 
+$\,\varphi\,\text{ is injective}\,$.
 	
 %\vbox{	\begin{itemize}
 %		\item $\varphi(FG)=\varphi(F)\varphi(G)$
@@ -19,27 +21,27 @@ Therefore one has to ensure that acceptation or rejection is independent of the 
 \define[normative pair]
 	{\label{normpair}A pair $\,(\C A,\C B)\,$ of $\ast$-algebras is a \emph{normative pair} whenever any automorphism $\,\varphi\,$ of $\,\C A\,$ can be extended into an automorphism $\,\overline\varphi\,$ of $\:\alg^\dagger(\C A \cup\C B)\:$ such that $\,\overline\varphi(F)=F\,$ for any $\,F\in \C B\,\subseteq\,\alg^\dagger(\C A \cup\C B)\,$.
 }
-
+%\vspace{-1mm}
 The two following propositions set the basis for a notion of acceptation/rejection independent of the representation of a word.
-
-\smallskip
+%\vspace{-1mm}
+%\smallskip
 %\notation{Given a finite set of closed terms $\,S\,$, we write $\,\displaystyle1_S:=\sum_{\TT s\in S} s \flow s\,$.}
 
 \proposition[automorphic representations]
 	{\label{automorphic}Any two representations $\,W(t_i),W(u_i)\,$ of a word $\,W\,$ over $\,\Sigma\,$ are automorphic: there exists an automorphism $\,\varphi\,$ of $\,(\closed)^1\,$ such that \[\,(\Id_{\,\ualg}\tensor\varphi)\big(W(t_i)\big)=W(u_i)\,\]
 }
-\vspace{-5mm}
+\vspace{-8mm}
 \proof{Take as $\,\varphi\,$ the inner automorphism associated with the isometric wiring
 
 \smallskip
 ~\hfill$\displaystyle\sum_i t_i\p x \flow u_i\p x \:\in\, (\closed)^1$\hfill~
 }
-
+\vspace{-1mm}
 \smallskip
 \proposition[nilpotency and normative pairs]
 	{\label{normative}Let $\,(\C A,\C B)\,$ be a normative pair, $\,F\in \ualg\tensor\C A\,$, $\,G\in \ualg\tensor\C B\,$ and $\,\varphi\,$ an automorphism of $\,\C A\,$ and $\,\psi:=\Id_{\,\ualg}\tensor\varphi\,$. Then $\,GF\,$ is nilpotent if and only if $\,G\,\psi(F)\,$ is nilpotent.%
 }
-
+\vspace{-2mm}
 \proof{Let $\,\overline\varphi\,$ be the extension of $\,\varphi\,$ as in Definition \ref{normpair} and $\,\overline\psi:=\Id_{\,\ualg}\tensor\overline\varphi\,$.
 
 We have for all $\,n\neq 0\,$ that $\,(G\psi(F))^n=(\overline\psi(G)\overline\psi(F))^n=(\overline\psi(GF))^n=\overline\psi((GF)^n)\,$.
@@ -51,6 +53,7 @@ By injectivity of $\,\overline\psi\,$, $\,(\psi(G)F)^n=0\,$ if and only if $\,(G
 {\label{indep}If $\,\big((\C \closed)^1,\C B\big)\,$ is a normative pair, $\,W\,$ a word over $\,\Sigma\,$ and $\,F\in \closed\tensor\Sigma\tensor\IO\tensor\C B\,$ an observation, then the product of the observation with the representation of the word, $\,FW(t_i)\,$, is nilpotent for one choice of $\,t_i\,$ if and only if it is nilpotent for all choices of $\,t_i\,$.}
 
 %Now we can use the tools from section \ref{actions} to build a particular normative pair.
+%\pagebreak[3]
 
 The word and observation algebras we introduced earlier can be shown to form a normative pair.
 

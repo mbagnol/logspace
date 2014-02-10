@@ -29,7 +29,7 @@ This actually defines an embedding of the algebraic tensor product of $\ast$-alg
 
 \smallskip
 \notation{We carry on the convention for the binary function symbol and write the tensor product of $\ast$-algebras as \emph{right associating} to avoid an excess of parenthesis: $$\,\C A\tensor\C B\tensor\C C \::=\:\C A\tensor(\C B\tensor\C C) \,$$}
-
+\vspace{-3mm}
 
 \define[unbounded tensor]
 	{\label{unbounded}%
@@ -40,16 +40,17 @@ This actually defines an embedding of the algebraic tensor product of $\ast$-alg
 
 We will consider finite permutations, but allow them to be composed even when their domain of definition is not the same.
 
+\smallskip
 \notations{Let $\,\F S_n\,$ be the set of finite permutations over $\{1, \hdots, n\}$, if $\,\sigma\in \F S_n\,$, we define $\,\sigma_{+k}\in \F S_{n+k}\,$ as the permutation $\,\sigma\,$ extended to $\,\{\:1,\dots,n,\dots,n+k\:\}\,$ letting $\,\sigma_{+k}(n+i):=n+i\,$ for $\,i\in\{\,1,\dots,k\,\}\,$.
 
-We also write $\,1_k:=\Id_{\{1,\dots,k\}}\in \F S_k\,$.}
+We also write $\,\unit_k:=\Id_{\{1,\dots,k\}}\in \F S_k\,$.}
 
 \define[representation]
 	{To a permutation $\,\sigma \in \F S_n\,$ we associate the flow
 	\[[\sigma]:= \,x_1\p x_2\p\,\cdots\,\p x_n \p y\flow x_{\sigma(1)}\p x_{\sigma(2)}\p\,\cdots\,\p x_{\sigma(n)}\p y\]
 %	We will write $\,\,$
 	
-	We will omit the brackets when there is no ambiguity.
+	We will omit the brackets when there is no risk of ambiguity.
 }
 
 A permutation $\,\sigma\in\F S_n\,$ will act on the $\,n\,$ first component of the unbounded tensor product (Definition \ref{unbounded}) by swapping them and leaving the rest unchanged.
@@ -59,7 +60,7 @@ The wirings $\,[\sigma]\,$ internalize this action: in the above definition, the
 
 \proposition[representation]
 	{\label{open-represent}For $\,\sigma\in \F S_n\,$ and $\,\tau\in\F S_{n+k}\,$ we have
-	\[[\sigma_{+k}]=[\sigma][1_{n+k}]=[1_{n+k}][\sigma] \qquad
+	\[[\sigma_{+k}]=[\sigma][\unit_{n+k}]=[\unit_{n+k}][\sigma] \qquad
 	[\sigma_{+k}\circ\tau]=[\sigma][\tau]\qquad
 	 \text{and} \qquad
 	 [\sigma^{-1}]=[\sigma]^\dagger

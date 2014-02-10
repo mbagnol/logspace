@@ -22,8 +22,10 @@
 \begin{abstract}
 We present an algebraic characterization of the complexity classes \textsc{Logspace} and \textsc{NLogspace}, using an algebra with a composition law based on unification. This new bridge between unification and complexity classes is inspired from proof theory and more specifically linear logic and Geometry of Interaction.
 
-We show how the unification procedure can represent a model of computation by means of specific subalgebras related to finite permutations groups.
-We then prove that the complexity of deciding whenever an observation (a program as expressed in this setting) accepts a word can be decided with logarithmic space.
+We show how unification can be used to build a model of computation by means of specific subalgebras associated to finite permutations groups.
+
+We then prove that the complexity of deciding whenever an observation (the algebraic counterpart
+of a program) accepts a word can be decided within logarithmic space.
 We also show that the construction can naturally be related to pointer machines, an intuitive way of understanding logarithmic space computing.
 
 
@@ -36,13 +38,14 @@ We also show that the construction can naturally be related to pointer machines,
 	%We also show that the construction can be naturally related with a notion pointer machines, which is another model of logarithmic space computation.
 \end{abstract}
 
-\keywords{ Implicit complexity, Geometry of Interaction, proof theory, unification, Logarithmic space, pointer machines} %Proof Theory, ...
+\keywords{Implicit Complexity, Unification, Logarithmic Space, Pointer \hbox{Machines}, Proof Theory, Geometry of Interaction.} %Proof Theory, ...
 
 \section*{Introduction}
 \addcontentsline{toc}{section}{Introduction}
 \input{introduction}
 
 \section{The Unification Algebra}\label{sec_unification}
+	\vspace{-1mm}
 	\subsection{Unification}
 	\input{unification}
 	\subsection{Flows and Wirings}
