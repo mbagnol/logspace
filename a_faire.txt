@@ -29,10 +29,10 @@ X Gérer bogue espace (cf. Theorem 4 .)
 X Revoir la biblio (tout compte fait, citer Herbrand dans un article de conf, c'est pas un peu prétentieux?)
 X On cite beaucoup {girard_normativity_2012,aubert_characterizing_2012,seiller_logarithmic_2013 dans l’intro, on peut peut-être virer un renvoi ?
 X Conclusion généralement à revoir (« in the relation to pointer machines » : « to mimic computation » ?)
+X Plus de complexité -- unification dans l’intro.
+X Revoir "Actually, this results stands for the complementary of these languages, but as co-NLogspace = NLogspace by the Immerman-Szelepcsényi theorem, this is harmless."
 
-
-* Revoir "Actually, this results stands for the complementary of these languages, but as co-NLogspace = NLogspace by the Immerman-Szelepcsényi theorem, this is harmless."
 * Soundness, ajouter un mot à la fin pour dire la correspondance entre unification qui « progresse » et étapes de calcul ?
-* Plus de complexité -- unification dans l’intro.
 * Remettre les pdfinfos
 * To encode Turing Machines in unification and to relates computation steps to steps of unification was already done for instance in \cite{Itai1987}, but this latter was about calculability, and did not really took into account complexity.
+???
