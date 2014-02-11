@@ -1,28 +1,14 @@
 \documentclass{llncs}
-
-
 \input{packages}
-
-%\input{thm} % style standard
-\input{thm.fancy} % style perso
-
+\input{thm.fancy}
 \input{macros}
-
 \begin{document}
-
-% indentation paragraphes
-\setlength{\parindent}{13pt}
-
-% symbole pour itemize
-\renewcommand{\labelitemi}{\scalebox{0.8}{$\bullet$}}
-
-% QED
-%\renewcommand{\qedsymbol}{\scalebox{0.8}{$\maltese$}}
-
-% coupures de lignes, espacement et hyphénation
-\hyphenpenalty=2000
-\tolerance=600
-
-\input{SECTIONS}
+	\setlength{\parindent}{13pt} % indentation paragraphes
+	\renewcommand{\labelitemi}{\scalebox{0.8}{$\bullet$}} % symbole pour itemize
+	
+	% coupures de lignes, espacement et hyphénation
+	\hyphenpenalty=2000
+	\tolerance=600
+	\input{SECTIONS}
 
 \end{document}
