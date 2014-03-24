@@ -1,5 +1,5 @@
 To prove the converse of Theorem \ref{soundness}, we prove that wirings can encode a special kind of read-only multi-heads Turing Machines: pointers machines.
-The definition of this model will be guided by our understanding of the computation of wirings: they won't have the ability to write and acceptation will be defined as termination of all paths of computation.
+The definition of this model will be guided by our understanding of the computation of wirings: they won't have the ability to write and acceptance will be defined as termination of all paths of computation.
 %It will scan the input without the ability to store anything else than the \emph{positions} of its \emph{pointers} and the current state.
 %Acceptation will be defined as the opposite of looping, and it is natural to see the course of the computation as universally non-deterministic.
 %Theses specificities do not enhance nor lower the computational power of our device, they just need to be properly tamed, to get back to a model close to Multi-Head Finite Automata and be able to decide any {\sc Logspace}-language.
@@ -59,7 +59,7 @@ In terms of wirings, the \texttt{MOVE} phase corresponds to the application of t
 %Note that the maintenance of $\,\TT c''\,$ as the letter pointed to by the (new) main pointer is not required at the \texttt{SWAP} phase, which will cause most computation to stop unexpectedly.
 %The point is that it is possible to implement that maintainance using the states of the machine (typically, add a store for the values of the pointers, which has finitely many configurations, to the state of the machine), and therefore we favor the simpler and more liberal definition.
 
-\define[acceptation]
+\define[acceptance]
 {\label{translate}We say that $\,M\,$ accepts $\,W\,$ if any sequence of transitions $\,\big(C_i\trans{\TT{MOVE}}{}C_i'\trans{\TT{SWAP}}{}C_i''\big)\,$ such that $\,C''_i=C_{i+1}\,$ for all $\,i\,$ is necessarily finite.
 
 We write $\,\lang(M)\,$ the set of words accepted by $\,M\,$.}
@@ -83,7 +83,7 @@ It takes little effort to see that our pointer machines are just a reasonable re
 %Multi-Head Finite Automata: that only one pointer may move does not lower the computational power of our device since it is always possible to switch the rôle of the pointers.
 %We can get back to the expected notion of transition by encoding into the states the values that can be read by the pointers.
 
-That acceptation and rejections are \enquote{reversed} is harmless in the deterministic (or equivalently reversible \cite{Lange2000}) case, and uses that {\sc co-NLogspace = NLogspace} to get the expected result in the non-deterministic case.
+That acceptance and rejections are \enquote{reversed} is harmless in the deterministic (or equivalently reversible \cite{Lange2000}) case, and uses that {\sc co-NLogspace = NLogspace} to get the expected result in the non-deterministic case.
 }
 
 \bigskip
