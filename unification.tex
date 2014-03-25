@@ -25,7 +25,7 @@ For any $\,t\in\terms\,$, we will write $\,\var(t)\,$ the set of variables occur
 We say that a term is closed when $\,\var(t)=\varnothing\,$, and denote $\,\closed\,$ the set of closed terms. 
 }
 
-\notation{We will write the binary function symbol as \emph{right associating} to avoid an excess of parenthesis: $\:t\p u\p v \::=\:t\p(u\p v) \,$}
+\notation{The binary function symbol $\,\p\,$ is not associative, but we will write it by convention as \emph{right associating} to lighten notations: $\:t\p u\p v \::=\:t\p(u\p v) \,$}
 %We also leave the $\,\p\,$ implicit $\,\TT c\p u\,$, so that: $\,\TT{lrc}\p\TT{llc}:=(\TT l \p\TT r \p\TT c)\p \TT l \p\TT l \p\TT c=(\TT l \p(\TT r \p\TT c))\p (\TT l \p(\TT l \p\TT c))\,$}
 
 %Variables in terms are meant to be replaced when needed by a term of the language. This is implemented by the notion of substitution.
@@ -41,19 +41,18 @@ We say that a term is closed when $\,\var(t)=\varnothing\,$, and denote $\,\clos
 	If $\,\theta=\{\:x_i\mapsto u_i\:\}$ and $\,\psi=\{\:y_j\mapsto v_j\:\}\,$, their \emph{composition} is defined as
 \[\theta;\psi\::=\: 
 	\{\:x_i\mapsto u_i.\psi\:\} \:\cup\:
-	\{\:y_i\mapsto v_i \:|\;y_i \not\in \dom(\theta)\:\}\]
+	\{\:y_j\mapsto v_j \:|\;y_j \not\in \dom(\theta)\:\}\]
 \vspace{-7mm}
 }
 
 \remark{The composition of substitutions is such that $\,t.(\theta;\psi)=(t.\theta).\psi\,$ holds.}
 
-\define%[vocabulary]
-{A \emph{renaming} is a substitution $\,\alpha\,$ such that $\,\alpha(\vars)\subseteq \vars\,$ and that is bijective.
+\define[renamings and instances]
+{\label{renaming}A \emph{renaming} is a substitution $\,\alpha\,$ such that $\,\alpha(\vars)\subseteq \vars\,$ and that is bijective. A term $\,t'\,$ is a \emph{renaming} of $\,t\,$ if $\,t'=t.\alpha\,$ for $\,\alpha\,$ a renaming.
 
-\smallskip Two substitutions $\,\theta,\psi\,$ are equal \emph{up to renaming} if there exist a renaming $\,\alpha\,$ such that $\,\psi=\theta;\alpha\,$.
-Two terms $\,t,u\,$ are equal \emph{up to renaming} if there exist a renaming $\,\alpha\,$ such that $\,t=u.\alpha\,$.
+\smallskip Two substitutions $\,\theta,\psi\,$ are equal \emph{up to renaming} if there is a renaming $\,\alpha\,$ such that $\,\psi=\theta;\alpha\,$.
 
-\smallskip A substitution $\,\psi\,$ is an \emph{instance} of $\,\theta\,$ if there exists a substitution $\,\sigma\,$ such that $\,\psi=\theta;\sigma\,$.
+\smallskip A substitution $\,\psi\,$ is an \emph{instance} of $\,\theta\,$ if there is a substitution $\,\sigma\,$ such that $\,\psi=\theta;\sigma\,$.
 
 %\smallskip A substitution $\,\theta\,$ is \emph{idempotent} if $\,\theta;\theta=\theta\,$.
 }
@@ -61,40 +60,38 @@ Two terms $\,t,u\,$ are equal \emph{up to renaming} if there exist a renaming $\
 \proposition%[folklore]
 	{\label{folklore}The following properties hold for any substitutions $\,\theta,\psi\,$:
 	\begin{itemize}%[parsep=0pt]
-		\item If $\,\theta\,$ is invertible, then it is a renaming
+		\item If $\,\theta\,$ is invertible (\textit{ie.} there is a $\,\psi\,$ such that $\,\theta;\psi=\Id\,$), then it is a renaming.
 %		\item Every substitution is equal up to renaming to an idempotent substitution.
-		\item If $\,\theta\,$ is an instance of $\,\psi\,$ and $\,\psi\,$ is an instance of $\,\theta\,$, then they are equal up to renaming
+		\item If $\,\theta\,$ is an instance of $\,\psi\,$ and $\,\psi\,$ is an instance of $\,\theta\,$, then they are equal up to renaming.
 	\end{itemize}
 }
 
 %\subsubsection*{Unification problems}
 
-To allow easier manipulation, the problem of unifying \emph{two} terms needs to be generalized into the problem of simultaneously unifying several pairs of terms.
+%To allow easier manipulation, the problem of unifying \emph{two} terms needs to be generalized into the problem of simultaneously unifying several pairs of terms.
 
 \define[unification]
-	{\label{def_unification}A \emph{unification problem} is finite set of pair of terms $\,P=\{\:t_i\uequ u_i\:\}\,$.
+	{\label{def_unification}Two terms $\,t,u\,$ are \emph{unifiable} if there is a substitution $\,\theta\,$ such that $\,t.\theta=u.\theta\,$.
 	
-	It is said to be unifiable if it has a \emph{unifier}: a substitution $\,\theta\,$ such that
-	\[u_i.\theta=t_i.\theta\ \text{ for all }\,i\]
-		In particular, we say that two terms $\,t,u\,$ are \emph{unifiable} if there exists a substitution $\,\theta\,$ such that $\,t.\theta=u.\theta\,$.
-		
-	We say that $\theta\,$ is a \emph{most general unifier (MGU) of $\,P\,$} if any other unifier of $\,P\,$ is an instance of $\,\theta\,$.
+	\smallskip	
+	We say that $\theta\,$ is a \emph{most general unifier (MGU) of $\,t,u\,$} if any other unifier of $\,t,u\,$ is an instance of $\,\theta\,$.
 }
 %\vspace{-5mm}
 
-\remark{It follows from Proposition \ref{folklore} that any two MGU of the same unification problem are equal up to renaming.}
+\remark{It follows from Proposition \ref{folklore} that any two MGU of a pair of terms are equal up to renaming.}
 
 \smallskip
 We will be interested mostly in the weaker variant of unification where one can first perform renamings on terms so that their variables are distinct, we introduce therefore a specific vocabulary for it.
 
 \define[disjointness and matching]
-	{\label{disjoint}Two terms $\,t,u\,$ are \emph{matchable} if $\,t',u'\,$ are unifiable, where $\,t',u'\,$ are renamings of $\,t,u\,$ such that $\,\var(t')\cap\var(u')=\varnothing\,$.
+	{\label{disjoint}Two terms $\,t,u\,$ are \emph{matchable} if $\,t',u'\,$ are unifiable, where $\,t',u'\,$ are renamings (Definition \ref{renaming}) of $\,t,u\,$ such that $\,\var(t')\cap\var(u')=\varnothing\,$.
 	
 	If two terms are not matchable, they are said to be \emph{disjoint}.
 }
 
 \example{$x\,$ and $\,\TT f\p x\,$ are not unifiable.
-However they are matchable, as $\,x.\{\,x\mapsto y\,;\,y\mapsto x\,\}=y\,$ which is unifiable with $\,\TT f\p x\,$.
+
+Butthey are matchable, as $\,x.\{\,x\mapsto y\,;\,y\mapsto x\,\}=y\,$ which is unifiable with $\,\TT f\p x\,$.
 
 More generally, disjointness is stronger than non-unifiability.}
 
@@ -107,20 +104,20 @@ The crucial feature of first-order unification is the (decidable) existence of m
 Whether two terms are unifiable and, in case they are, finding a MGU is decidable.}
 
 
-Let us note the following fact, that will be useful in the next section: solving a unification problem can be done incrementally.
+%Let us note the following fact, that will be useful in the next section: solving a unification problem can be done incrementally.
 
-\smallskip
-\notation{If $\,P=\{\:t_i\uequ u_i\:\}\,$ is a unification problem and $\,\theta\,$ a substitution, we write $\,P.\theta:=\{\:t_i.\theta\,\uequ\, u_i.\theta\:\}\,$.}
+%\smallskip
+%\notation{If $\,P=\{\:t_i\uequ u_i\:\}\,$ is a unification problem and $\,\theta\,$ a substitution, we write $\,P.\theta:=\{\:t_i.\theta\,\uequ\, u_i.\theta\:\}\,$.}
 
-\lemma[partial unification]
-	{\label{part-unif}Let $\,P=Q\uplus R\,$ ($\,\uplus\,$ denotes disjoint union) be a unification problem.
-	The following statements are equivalent:
-	\begin{itemize}
-		\item $\,P\,$ is unifiable
-		\item $\,Q\,$ is unifiable with MGU $\,\theta\,$ and $\,R.\theta\,$ is unifiable with MGU $\,\psi\,$
-	\end{itemize}
-In that case, we have moreover that $\,\theta;\psi\,$ is a MGU of $\,P\,$.
-}
+%\lemma[partial unification]
+%	{\label{part-unif}Let $\,P=Q\uplus R\,$ ($\,\uplus\,$ denotes disjoint union) be a unification problem.
+%	The following statements are equivalent:
+%	\begin{itemize}
+%		\item $\,P\,$ is unifiable
+%		\item $\,Q\,$ is unifiable with MGU $\,\theta\,$ and $\,R.\theta\,$ is unifiable with MGU $\,\psi\,$
+%	\end{itemize}
+%In that case, we have moreover that $\,\theta;\psi\,$ is a MGU of $\,P\,$.
+%}
 
 %\proof{The algorithm from the above proof can be modified to treat first pairs of $\,Q\,$ at line 3 without affecting its behaviour. 
 %}
@@ -151,5 +148,6 @@ Whether two linear terms $\,t,u\,$ with disjoint sets of variables are unifiable
 %\smallskip
 %Moreover, their MGU is of size at most the sum of the sizes of $\,t\,$ and $\,u\,$.
 }
-
-The lemma in \cite{dwork_parallel_1988} actually states that the problem is in \textsc{NC$^1$}, a complexity class of parallel computation known to be included in \textsc{Logspace}.
+\vspace{-2mm}
+The lemma in \cite{dwork_parallel_1988} actually states that the problem is in \textsc{NC$^1$}, a complexity class of parallel computation known to be included in \textsc{Logspace}. We will actually use only part of the result, matching a linear term against a closed term.
+\vspace{-2mm}

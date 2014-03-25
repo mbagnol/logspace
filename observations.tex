@@ -2,12 +2,16 @@ We now define \emph{observations}, programs computing on representations of word
 They  lie in a particular $\ast$-algebra based on the representation of permutations presented in Sect.\ref{permutation}.
 
 \define[observation algebra]
-	{An \emph{observation} over a finite set of symbols $\,\Sigma\,$ is any element of $\,\C O_\Sigma^\concrete\,$ where $\,\C O_\Sigma:=\,\closed\tensor\Sigma\tensor\IO\tensor\C S\,$, \textit{i.e.} a \emph{finite} sum of flows of the form
+	{An \emph{observation} over a finite set of symbols $\,\Sigma\,$ is any element of $\,\C O_\Sigma^\concrete\,$ where $\,\C O_\Sigma:=\,(\closed^\ast\tensor\Sigma^\ast\tensor\IO^\ast)\tensor\C S\,$, \textit{i.e.} a \emph{finite} sum of flows of the form
+		\vspace{-1mm}
 	\[(s'\p\TT c' \p \TT d' \flow s\p\TT c\p\TT d)\tensor[\sigma]\]
-with $\,\TT c,\TT c'\in\Sigma\,$, $\,\TT d,\TT d'\in \IO\,$, $\,s,s'\,$ closed terms and $\,\sigma\,$ is a permutation.
+	\vspace{-4mm}
+	
+with $\,s,s'\,$ closed terms, $\,\TT c,\TT c'\in\Sigma\,$, $\,\TT d,\TT d'\in \IO\,$ and $\,\sigma\,$ is a permutation.
 
 \smallskip
 Moreover when an observation happens to be an isometric wiring, we will call it an \emph{isometric observation}.
 }
 
+	\vspace{-2mm}
 

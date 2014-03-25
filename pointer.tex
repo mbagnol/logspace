@@ -90,17 +90,17 @@ That acceptance and rejections are \enquote{reversed} is harmless in the determi
 As we said, our pointer machines are designed to be easily simulated by wirings, so that we get the expected result almost for free.
 
 \theorem[space completeness]
-{If $\,L\in \text{\sc NLogspace}\,$, then there exist an observation $\,\phi\in\C O_\Sigma\,$ such that $\,\lang(\phi)=L\,$.
+{If $\,L\in \text{\sc NLogspace}\,$, then there exist an observation $\,\phi\in\C O_\Sigma^+\,$ such that $\,\lang(\phi)=L\,$.
 Moreover, if $\,L\in \text{\sc Logspace}\,$ then $\,\phi\,$ is an isometric wiring.
 }
 
 \proof{%
 By Proposition \ref{pointerl}, there exists a pointer machine $\,M=(N,\TT S,\Delta)\,$ such that $\lang(M) = L$.
-We associate to $\,S\,$ a set of distinct closed terms $\,[\TT S]\,$ and write $\,[s]\,$ the term associated to $\,s\,$.
+We associate to a set $\,S\,$ a set of distinct closed terms $\,[S]\,$ and write $\,[s]\,$ the term associated to $\,s\,$.
 To any element $\,D=(s,\TT c,\TT d) \rightarrow (s',\TT c',\TT d') \times \sigma\,$ of $\,\Delta\,$ we associate the flow 
-\[[D]:=([s']\p\TT c'\p\TT d' \flow [s]\p\TT c\p\TT d) \tensor \sigma \:\in[\TT S]\tensor\Sigma\tensor\IO\tensor\C S_n\,\]
+\[[D]:=([s']\p\TT c'\p\TT d' \flow [s]\p\TT c\p\TT d) \ptensor [\sigma] \:\in([\TT S]^\ast\ptensor\Sigma^\ast\tensor\IO^\ast)\tensor\C S_n\,\]
 and we define the wiring $\,[M]\in\C O_\Sigma^+\,$ as $\,\displaystyle\sum_{D\in \Delta} [D]\,$.
 
-One can easily check that this translation preserves the language recognized and relates reversibility with isometricity: in fact, $\,M\,$ is reversible if and only if $\,[M]\,$ is an isometric wiring.
+One can easily check that this translation preserves the language recognized (there is even a step by step simulation of the computations on the word $\,W\,$ by the wiring $\,[M]W(t_i)\,$) and relates reversibility with isometricity: in fact, $\,M\,$ is reversible if and only if $\,[M]\,$ is an isometric wiring.
 Then, if $\,L\in \text{\sc Logspace}\,$, $\,M\,$ is deterministic and can always be chosen to be reversible \cite{Lange2000}.
 }
