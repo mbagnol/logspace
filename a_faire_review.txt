@@ -1,0 +1,437 @@
+p4: Proposition 9:
+  I think it would be good to make clear that this Proposition is 
+  stronger than needed to avoid confusion.. 
+p6: I think terms, such as "unital *-algebra", should be defined in
+  the paper.
+p7: Perhaps it should be said again what $(-)^1$ refers to.
+p8, definition of "word algebra":
+  It seems that $\mathcal{T}^c$ is used as a *-algebra here,
+  but it has only been defined as the set of closed terms.
+  Looking at the uses below, it seems that the sets of all 
+  flows s<-t in which s and t are closed are meant.
+p7, Definitions 24 and 26:
+  It looks like in these definitions the associativity of the 4-tuples
+  is not right. It seems that observations are used as 
+  $(\mathbb{T}_c \otimes \Sigma \otimes LR) \otimes \mathcal{S}$
+  and not as 
+  $\mathbb{T}_c \otimes (\Sigma \otimes (LR \otimes \mathcal{S}))$,
+  as defined. For example, the "i.e. a finite sum of flows of the
+  form [...]" or Corollary 32 do not seem to match the definition. 
+p9, "linear application"?
+p9, Proposition 30 and Corollary 32: 
+  Is the notation $W(t_i)$ short for $t_1,...,t_n$?
+p9, last line of Proposition 31:
+  I think $(\psi(G)F)^n = 0$ should be $\overline{\psi}((GF))^n = 0$ 
+p9, Corollary 32: 
+   - The term "observation" is used here in a way that does not quite
+     match its definition, as where $\mathcal{B}$ is allowed in place
+     of $\mathcal{A}$.
+p11: "is stable by F" 
+  Does that mean $F(v) \in E$ for any $v\in E$?
+p11, Definition 37: 
+  I think the order in the tensor is wrong and that it should
+  $(S(\phi) \otimes \Sigma \otimes LR) \otimes \mathcal{S}_{N(\phi)}$.
+p11: "[...] that is to say logarithmic in the size of the input."
+  I think here $n+1$ is the size of the input (this should be made
+  clearer), as the terms $t_0,...,t_n$ are chosen to encode the 
+  positions in a word in Definition 25.
+  But then, the dimension is linear in the size of the input, not
+  logarithmic.
+p11, proof of Theorem 35:
+  I think in line 4 of algorithm it should read 
+  "pick a vector $v \in Comp_\phi(t_i)$".
+p11, proof of Theorem 35: "The vector chosen at lines 4 is of size at
+  most D [...]"
+  With a binary encoding, the size of the vector would be log(D).
+  Since D is linear in the size of the input, the overall space usage
+  of the algorithm is then logarithmic, as claimed.
+p11, "nilpotent" -> "being nilpotent"
+p12: "multi-heads Turing Machine" -> "multi-head Turing Machine"
+
+
+Def. 24: It is perhaps helpful to the reader to recall here 
+that (T^c)^1 is not equivalent to T^c, but to T^c tensor I.
+
+Def. 37: \Sigma tensor LR tensor S_{N(\phi)} tensor S(\phi) should be cyclically shifted.
+
+"that is to say logarithmic in the size of the input"
+This is confusing. The correct thing is that the dimension is polynomial 
+while each term in Comp(t_i) can be described logarithmically in the size of the input.
+ 
+
+Def. 2 y_i is used while y_j is defined.
+
+Def. 5 "is finite set of pair" rather "is a finite set of pairs". 
+One can argue that the unification problem itself is not some set of pairs but the question whether there is a unifier for a given set of pairs.
+
+Prop. 7 about "finding a MGU is decidable" the process of finding something is usually part of the proof for decidability but not decidability itself.
+
+Def. 13 it is not immediately clear that \lambda_i is in C and l_i is in F and (\sum_i \lambda_i l_i) is a wiring. 
+Maybe a sentence such as "a wiring (\sum_i \lambda_i l_i), where \lambda_i is in C and l_i is in F, ..." might improve readability.
+
+Def. 20 in A^\inf = ... N is used instead of \mathbb{N}
+
+Def. 24 it might improve readability to explicitly use the [] operator. Also, is *0010 = 01*00 ? Maybe I'm wrong but it might be *0010 = 10*00.
+
+Def. 26 "d" is not in \Sigma anymore as in Def. 24. Maybe a renaming to avoid confusion is helpful.
+
+Def. 27 "W" is used as wiring whereas "F" was previously used.
+
+Def. 30 it is not immediately clear which overloaded definition of the tensor product is used since Id_U is never mentioned.
+
+Cor. 32 "for one choice of t_i" rather "for one choice of (t_i)" if (t_0, ..., t_n) is meant.
+
+Def. 34 "\phi \in O_\Sigma" previously \phi always was in O_\Sigma^+ (might be a typo).
+
+Def. 36 not clear what "stable by F" means.
+
+Proof of Thm. 35 Missing input. 
+Line 1: I suspect \phi is not part of the input, thus line 1 is not a NLOGSPACE computation, but a constant. Then the word "compute" is misleading.
+Line 4: t is never used. 
+Line 4: Is t_i part of the input? Does t_i stand for t_0, ..., t_n? If so, is n part of the input?
+Line 6: v is not defined.
+Line 6: Why can't one always pick v=0 and immediately ACCEPT?
+
+Def. 44 "\phi \in O_\Sigma" previously \phi always was in O_\Sigma^+ (might be a typo).
+
+
+page 3:
+
+* I find the bullet for the main term operation (before Def. 2) a bit
+  confusing. It resembles too much multiplication, which is
+  associative. This combined with the convention to omit parentheses
+  will make some people think the bullet is indeed associative.
+* Maybe you could explain what "invertible" means.
+
+page 4:
+
+* In Def. 6 you use the term "renaming" for something different than
+  previously defined in Def. 3.
+
+page 5:
+
+* Maybe you could explain what "involution" means.
+* Def. 13.: Start the initial sentence as  "Wirings are...."
+* Def. 13 suggests the structure of *-algebra. It should define it
+  instead. Namely, give the representation of elements, give the
+  definition of operations and neutral elements.
+
+page 6:
+
+* Def. 15: I prefer less ambiguous formulation: "E^+ for the set of
+  all concrete wirings in E."
+* Prop. 16: "and the t_i" -> "and t_i"
+* "Unbounded tensor products will allow to represent data of arbitrary
+  size, and finite-support permutations will be used to manipulate
+  these data." -> "Unbounded tensor products allow us to represent
+  data of arbitrary sizes, and finite-support permutations will be used
+  to manipulate it."
+* What are Vect(E), Alg(E) and Alg^\dagger(E) exactly? In particular
+  what is the difference between Vect(E) and \mathbb{H}^c? It is
+  rather unfriendly to the reader to have two denotations for the same
+  thing.
+* {\cal I} - I am puzzled by the definition. What is that I that is
+  used in \mathbb{C}.I? What is the meaning of "=" here? Is {\cal I}
+  somehow connected with E that is mentioned as a parameter in the
+  paragraph?
+
+page 7:
+
+* The use of the tensor sign \otimes is a bit misleading here since
+  tensor is mainly associative. Again, mixing this with your
+  convention to avoid parentheses can be dangerous.
+
+page 8:
+* Def 23: The equality sign in the definition of S_n is highly
+  confusing.  
+* What is (\mathbb{T}^c)^1? Especially, what is the meaning of (.)^1
+  here?
+* Def. 25: In the def. of W(t_0...t_n), why do you place R to the left
+  and L to the right?
+* Def. 26: the part starting with "with c, c'..." is very clumsy.
+
+page 12:
+* It is a bit clumsy to add LR to the configuration of the
+  machine. You could well avoid it from the definition at the cost of
+  slightly different definition of configuration evolution procedure.
+
+page 15:
+* The references are a bit inconsistent: some journal names are
+  abbreviated (e.g. TCS in [1]) and some are expanded (e.g. TCS in
+  [2]).
+* [10] is in LNCS series.
+* If LNCS is expanded then also LIPIcs should be.
+* It is not good to use "fuer" when "f\"ur" works.
+
+
+
+************
+Corrigées : 
+p01: has grew -> has grown
+p02: "to encore the action"?
+p02: typo "one can one can"
+p02: "a notion pointer machines" -> "a notion of pointer machines"
+p04 Prop. 9: "Wether" -> "Whether"
+p06, l-3: It took me a long time to find the definition of $I$. Perhaps you could refer to it.
+p06, "that will provide enough" -> "that provide enough"
+p07 : "n first component" -> "first n components"
+p07 : "the last y variable" -> "the variable y at the end"
+p09 and following: acceptation -> acceptance
+p09 independance -> independence
+p10: "Actually, this results stands for the complementary" -> "Actually, this result stands for the complements"
+p10: complementary -> complement
+p11 Code of the algorithm in the proof of Lemma 38: "pick a term t" ->  "pick a term v"
+
+******
+À discuter : 
+Proposition 31: on the last line of the proof, (\psi(G)F)^n should be (G\psi(F))^n.
+-> Il y a une typo, c’est sûr, mais je ne sais pas comment tu veux parenthèser.
+Page 10, second to last line of proof of Theorem 33: $\tilde\phi(F)$ -> $\tilde\varphi(F)$.
+Page 7, Def. 19 - I prefer "these renaming classes" over "the renaming classes".
+
+* Vocabulaire : 
+Def. 6: usually (and in [20]) the term "matching" means something else.
+It is better to use a different term to avoid confusion (or at least 
+to add an explanation why it is called matching).
+p11, Maybe you could explain what "stable" means.
+
+
+***** 
+???
+Lemma 38: t -> v
+-> J’imagine que c’est dans la preuve du Lemme, et c’est corrigé désormais.
+
+
+----------------------- REVIEW 1 ---------------------
+The paper presents an algebraic characterisation of NLogspace and
+Logspace classes. The main algebraic structure used here are
+*-algebras. Languages in this framework are defined by means of
+observations and these, roughly speaking, represent the transition
+relation of a potential (N)Logspace machine.  Unification is used in
+the whole mechanics to transform a particular configuration according
+to the observation under examination. Actually, it is not unification
+that is employed here, but first-order matching (Logspace complete by
+Dwork, Kanellakis, Stockmeyer).
+
+The presented algebraic characterisation is interesting since it
+brings together the traditional mathematics and computer
+science. Moreover, it does so in a very concrete way (it provides a
+particular model instead of one defined in terms of category theory
+constructs). This makes the whole construction accessible for wider
+audience. There are four issues I find a little bit disturbing about
+the paper. First, the connection to Geometry of Interaction is treated
+in a very superficial manner. Second, the reference to implicit
+computational complexity is too far fetched. The whole story is not
+about imposing constraints on a language to fit its expressions into a
+complexity class, but it is about algebraic characterisation of a
+complexity class. I do not believe in languages without syntax and the
+paper does not define any syntax at all.  Third, making unification
+the main hero of the story is too far going. It is not unification
+that is used in the end, but matching. Fourth, the paper is sometimes
+written in unclear style. However, I must stress that these issues
+are rather petty and the whole contribution is much interesting.
+
+
+
+----------------------- REVIEW 2 ---------------------
+SUMMARY:
+This paper introduces a specific notion of observations as an *-algebraic computation model based on matching and nil-potency to characterize the complexity classes LOGSPACE and NLOGSPACE.
+While the link between a more abstract notion of observations based on von Neumann algebras and logarithmic space is already considered in previous work,
+this paper further specifies and simplifies the particular concepts needed for such a characterization.
+The authors properly introduce flows, a concept based on matching which is strongly related to functional programming, to create an *-algebra of wirings.
+They further enrich this algebra with finite permutation groups using a lifted tensor product to introduce a specific notion of observations 
+which play the role of algebraic representations of (functional) programs.
+Afterwards the interaction of observations and representations of words is defined to specify the language recognized by an observation based on nil-potency.
+Finally, the proofs of space soundness and space completeness for LOGSPACE and NLOGSPACE are sketched.
+
+JUSTIFICATION OF SCORES:
+Describing complexity classes algebraically using unification/matching, the paper is well in scope of TLCA. 
+Personally, I find the paper very interesting because it describes an algebraic representation of a functional programming language subset, namely (pattern)matching,
+and associates this representation with logarithmic space complexity classes. Additionally, this is done in a very simplistic manner.
+
+I have several points of criticism of this paper.
+First, the authors are sometimes inconsistent with variable naming. 
+E.g., sometimes a wiring is called "F" (Lem. 18), sometimes any *-algebra element is called "F" (Def. 19), 
+sometimes a wiring is called "W" (Def. 27), sometimes a word is called "W" (Prop. 30).
+The same is true for symbols "c", "d" which are sometimes both in \Sigma (Def. 24) and sometimes only "c" is in \Sigma and "d" is used but is not in \Sigma (Def. 26).
+The same is true for the implicit index notation. In Lem. 38 Comp_\phi(t_0, ..., t_n) is defined. However, in Proof of Thm. 35 Comp_\phi(t_i) is used while the index i is never bound.
+
+Second, the overloading of the tensor product, which is fine, is combined with the overloading of the [] operator, which is also fine. 
+However, then the overloaded [] operator is made implicit and used together with the overloaded tensor product. 
+This leads to an over-simplistic representation (Def. 24) and too much ambiguity.
+
+Third, there are no examples to demonstrate the more involved concepts of the paper. 
+Examples could have helped to resolve the ambiguity issues.
+
+Forth, due to too much introduced ambiguity I cannot verify the proof of, maybe the most important, Thm. 35.
+Additionally, the input of the provided algorithm and its NLOGSPACE part of the computation are not made clear. 
+This is my major concern with this paper.
+
+
+
+
+----------------------- REVIEW 3 ---------------------
+CONTENT
+
+This paper studies a representation of the complexity classes
+LOGSPACE and NLOGSPACE in an algebraic setting.
+
+In the first part of the paper, the authors construct an algebraic
+structure that can represent computation. This structure computes on
+terms by means of term matching. The basic notion of computation is
+consists of a "flow" t<-u, in which t and u are terms with the same
+set of variables. This flow represents a program performing just the
+pattern matching operation (fun x -> match x with u -> t). By
+considering formal sums of flows, the authors account for
+nondeterministic choices. Such formal sums are called "wires". In the
+wire (t<-u)+(s<-v), the input can be matched against either of the two
+flows. The authors show that the set of wires has the structure of a
+*-algebra and they use algebraic operations, such as a tensor product,
+to work with wires. The tensor (t<-u) \otimes (s<-v) is given by
+(ts<-uv), i.e. the input is split in two parts, which are then matched
+by the individual flows.
+
+This model of computation is then used to represent (N)LOGSPACE.
+Section 2 defines an encoding of words that is suitable for LOGSPACE
+computation. Words are represented by wires that encode functions that
+in particular take as input a position in the word and that return the
+character at that position. (N)LOGSPACE programs are represented by
+"observations", which are elements of a certain algebra. Observations
+can be understood as encoding the state transition a certain kind of
+pointer machine that has the same computational power as (N)LOGSPACE
+machines. By composing an observations with the encoding of an input
+word, one obtains a wire that computes a single step of such a pointer
+machine. In the algebraic model has no internal means of iteration has
+been defined, so this wire for a single step is multiplied (composed)
+with itself as many times as a pointer machine may have steps before
+reaching a loop. A pointer machine accepts if it halts on all
+possible runs. 
+
+In the paper these definitions are first given algebraically.
+Observations are defined as *-algebras of a certain form and
+acceptance is defined by nilpotence of the wire obtained by
+multiplying input word and the observation. The main result of the
+paper is that languages defined using this notion of acceptance
+correspond to NLOGSPACE and LOGSPACE. For the latter, a restriction to
+isometric observations is imposed. The correspondence of the
+algebraic definitions with the pointer machine view is explained in
+Section 4 as part of the proof of the main result.
+
+
+EVALUATION
+
+Studying algebraic structures in relation to computational complexity
+is interesting. As the main contribution of the paper I see the
+definition of an algebraic setting in which one can study computation
+with logarithmic space and an encoding of LOGSPACE pointer machines in
+it. While the connection of LOGSPACE computation and algebraic models
+based on the Geometry of Interaction has been made before, the
+particular algebraic formulation in this paper is new and quite
+simple. 
+
+The possible consequences of the proposed algebraic characterization
+of (N)LOGSPACE remain to be studied in further work. The paper shows
+in Section 3 how one can use the algebraic tools to formulate what it
+means that pointer machines behave in the same way no matter how
+pointers are encoded. But from the present paper it does not yet
+become clear in what way the algebraic characterization might improve
+our understanding of computation with logarithmic space.
+
+While unification appears in the title and in the abstract the work is
+described as a "new bridge between unification and complexity
+classes", it seems to me that unification is used merely as an
+implementation device. The authors give a nice and simple
+presentation of their computational model using pattern matching
+(match x with u -> t), and unification can be used to implement it. I
+cannot see any deeper connection of unification and logarithmic space
+in this work. When first reading the paper I expected the fact that
+that matching of linear terms is in LOGSPACE (Proposition 9) to be
+related to the proposed characterization of LOGSPACE. But I think for
+the results of the paper it would make no difference if LOGSPACE were
+replaced by LINSPACE in Proposition 9. All computation (and therefore
+unification) happens on terms of logarithmic size.
+
+The paper is well-written and the presentation of the computational
+model is nice. I believe that the results are correct (a few minor
+technical errors are listed below). I think the paper can be accepted.
+
+
+COMMENTS
+
+A general comment: 
+
+The definition of flows reminded me of proofs of coherence in
+symmetric monoidal categories. To each coherent morphism one can
+associate a pair of terms that describes its behavior. For example,
+for the swapping morphism A \otimes A -> A \otimes A would one would
+associate the words x \otimes y (for the input) and y \otimes x (for
+the output), where x and y are variables. To the identity morphism of
+the same type one would associate x \otimes y (for input) and x
+\otimes y (for output). The coherence result then states that 
+that any two morphisms with the same associated terms are equal.
+
+Given this, I wonder if your computation model can be seen as a
+description of some symmetric monoidal category. Maybe there is a
+relation to existing categorical models of the GoI.
+
+----------------------- REVIEW 4 ---------------------
+This paper is a reworking of some prior work [13], [14], [15], 
+which have tried to mathematically express data and algorithms 
+in the hyperfinite factor H of type II_1 (a specific von Neumann algebra), 
+inspired by Geometry of Interaction. Thanks to richness of H,
+data and algorithms are representable in H in various ways; indeed there is no canonical
+way of representation. Hence the concept of normativity, i.e. representation-independence,
+becomes of central interest. Computation then amounts to measurement, 
+that is calculation of a determinant, which can be effectively done by 
+checking nilpotency of the operator arising from the input data and the algorithm.
+The main results are implicit characterizations of co-NL (that is a posteriori 
+equivalent to NL) and L.
+
+Though beautiful, it requires too much mathematical prerequisite, perhaps
+much more than actually needed (as often happens in Girard's work). 
+The purpose of this paper is to give a more concrete,
+elementary presentation to the same idea that does not require any heavy mathematical
+structure such as von Neumann algebras.
+
+The hyperfinite factor H is now replaced by a concrete *-algebra U, called 
+the unification algebra, that is much more familiar to computer scientists.
+As before, everything, including data and algorithms, can be represented in U,
+and computation again amounts to checking nilpotency.
+The main results are the same as before: characterizations of NL and L.
+
+I think this paper achieves its goal. 
+Replacing the hyperfinite factor by the unification 
+algebra is a very good idea (that is again inspired by GoI).
+The development is rigorous. As it precisely traces prior work, 
+I can believe the correctness.
+
+Of course, there are trade-offs. Mathematical elegance is somehow reduced, 
+and the notion of normativity is less impressive than before; though it 
+still plays a role, it now looks a tiny property. Nevertheless, I personally
+prefer the current minimalist approach, as it pindowns the least required
+structure in which logspace computation a la GoI can be performed. 
+Also, as discussed in the conclusion, the current approach opens up a way to paralell 
+computation, and there is a hope to obtain mathematical insight on paralell 
+complexity classes by pursuing this approach.
+
+A criticism might be made on the significance of the whole line of research 
+including [13],[14],[15]. It comes from GoI, thus proof theory of linear logic.
+But once the origin has been forgotten, it merely looks one of many characterizations
+of NL and L; indeed use of H or U can be considered a very roundabout way of 
+expressing pointer machine computation. (To answer this criticism, it would be useful to
+find good examples of observations (wirings) that are mathematically defined, without 
+referring to pointer machines.)
+Nevertheless, I think the attempt is important from the viewpoint of GoI,
+since it expands the realm of GoI to the non-logical world. This curious attempt
+should be presented at least once at a computer science conference, but 
+as far as I know, the previous papers [14], [15] have not been presented yet. 
+I think the current paper is the suitable one to be presented for computer scientists.
+
+The formal development is rigorous, but lack of illustrations makes it 
+very hard to gain the intuition. 
+It would be nicer if actual computation in U is illustrated by 
+tiny examples at some early stage. Perhaps the authors may
+sacrifice some explanations of unification in the first  
+part (that is common knowledge among computer scientists).
+
+Given all that, my conclusion is "accept" (though not "strong accept").

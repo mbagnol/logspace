@@ -1,5 +1,10 @@
 We are going to define how observations accept and reject words.
+<<<<<<< HEAD
 This needs a discussion, because there is an issue with word representations: an observation is an element of $\,\ualg\,$ and can therefore only interact with \emph{representations} of a word, and there are many possible representation of the same word (in Definition \ref{words}, different choices of closed terms lead to different representations). Therefore one has to ensure that acceptance or rejection is independent of the representation, so that the notion makes the intended sense.
+=======
+This needs a discussion, because there is an issue with word representations: an observation is an element of $\,\ualg\,$ and can therefore only interact with \emph{representations} of a word, and there are many possible representation of the same word (in Definition \ref{words}, different choices of closed terms lead to different representations).
+Therefore one has to ensure that acceptance or rejection is independent of the representation, so that the notion makes the intended sense.
+>>>>>>> FETCH_HEAD
 
 The termination of computations will correspond to the algebraic notion of \emph{nilpotency}, which we recall here.
 
@@ -47,10 +52,15 @@ We have for all $\,n\neq 0\,$ that $\,(G\psi(F))^n=(\overline\psi(G)\overline\ps
 By injectivity of $\,\overline\psi\,$, $\,(G\psi(F))^n=0\,$ if and only if $\,(GF)^n=0\,$.
 }
 
+<<<<<<< HEAD
 \corollary[independance]
 {\label{indep}Let $\,\big((\C \closed)\tpower 1,\C B\big)\,$ be a normative pair and $\,W\,$ a word over $\,\Sigma\,$.
 
 Let $\,F\in (\closed^\ast\ptensor\Sigma^\ast\ptensor\IO^\ast)\ptensor\C B\,$ be an wiring, then the product $\,FW(t_i)\,$, is nilpotent for one choice of $\,(t_i)\,$ if and only if it is nilpotent for all choices of~$\,(t_i)\,$.}
+=======
+\corollary[independence]
+{\label{indep}If $\,\big((\C \closed)^1,\C B\big)\,$ is a normative pair, $\,W\,$ a word over $\,\Sigma\,$ and $\,F\in \closed\tensor\Sigma\tensor\IO\tensor\C B\,$ an observation, then the product of the observation with the representation of the word, $\,FW(t_i)\,$, is nilpotent for one choice of $\,t_i\,$ if and only if it is nilpotent for all choices of $\,t_i\,$.}
+>>>>>>> FETCH_HEAD
 
 %Now we can use the tools from section \ref{actions} to build a particular normative pair.
 %\pagebreak[3]
