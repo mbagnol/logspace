@@ -1,5 +1,7 @@
 % test de commit
 % temporaire
+\newcommand{\tpower}[1]{^{\otimes #1}}
+\newcommand{\ptensor}{\,\dot{\otimes}\,}
 \newcommand{\unitalg}{\C I}
 \newcommand{\unit}{I}
 \newcommand{\uequ}{\raisebox{-1pt}{$\,\stackrel{\TT ?}{\text{\tt =}}\,$}}
@@ -14,12 +16,12 @@
 \renewcommand{\i}{\TT{R}}
 \renewcommand{\o}{\TT{L}}
 \newcommand{\set}[2]{\left\{\:#1 \ \middle|\ #2\:\right\}}
-\newcommand{\vars}{\BB V}
+\newcommand{\vars}{\TT V}
 \newcommand{\const}{\TT C}
-\newcommand{\terms}{\BB T}
+\newcommand{\terms}{\TT T}
 \newcommand{\lang}{\mathcal{L}}
-\newcommand{\closed}{\BB T^{\TT c}}
-\newcommand{\closedh}{\BB H^{\TT c}}
+\newcommand{\closed}{\TT T_{\TT c}}
+\newcommand{\closedh}{\BB V_{\TT c}}
 \newcommand{\ualg}{\C U}
 \newcommand{\partialisos}{\BF P(\C U)}
 \newcommand{\alg}{\TT{Alg}}
@@ -27,7 +29,7 @@
 \newcommand{\ze}{\TT 0}
 \newcommand{\un}{\TT 1}
 \newcommand{\start}{\star}
-\newcommand{\IO}{\TT{LR}\,}
+\newcommand{\IO}{\TT{LR}}
 \newcommand{\p}{\scalebox{0.6}{$\,\bullet\,$}}
 \newcommand{\bounded}{\C B}
 \newcommand{\Matrix}{\BF M}
@@ -91,4 +93,4 @@
 \newcommand{\exemple}[1]{\noindent{\it\textbf{Exemple:} #1}}
 \newcommand{\exemples}[1]{\noindent{\it\textbf{Exemples:} #1}}
 \renewcommand{\example}[1]{\noindent{\textbf{Example.} \it#1}}
-\newcommand{\examples}[1]{\noindent{\it\textbf{Examples:} #1}}
+\newcommand{\examples}[1]{\noindent{\textbf{Examples.} \it #1}}
