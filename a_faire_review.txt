@@ -45,8 +45,6 @@ p11, proof of Theorem 35: "The vector chosen at lines 4 is of size at
   With a binary encoding, the size of the vector would be log(D).
   Since D is linear in the size of the input, the overall space usage
   of the algorithm is then logarithmic, as claimed.
-p11, "nilpotent" -> "being nilpotent"
-p12: "multi-heads Turing Machine" -> "multi-head Turing Machine"
 
 
 Def. 24: It is perhaps helpful to the reader to recall here 
@@ -68,8 +66,6 @@ Prop. 7 about "finding a MGU is decidable" the process of finding something is u
 
 Def. 13 it is not immediately clear that \lambda_i is in C and l_i is in F and (\sum_i \lambda_i l_i) is a wiring. 
 Maybe a sentence such as "a wiring (\sum_i \lambda_i l_i), where \lambda_i is in C and l_i is in F, ..." might improve readability.
-
-Def. 20 in A^\inf = ... N is used instead of \mathbb{N}
 
 Def. 24 it might improve readability to explicitly use the [] operator. Also, is *0010 = 01*00 ? Maybe I'm wrong but it might be *0010 = 10*00.
 
@@ -159,9 +155,7 @@ page 15:
 * The references are a bit inconsistent: some journal names are
   abbreviated (e.g. TCS in [1]) and some are expanded (e.g. TCS in
   [2]).
-* [10] is in LNCS series.
 * If LNCS is expanded then also LIPIcs should be.
-* It is not good to use "fuer" when "f\"ur" works.
 
 
 
@@ -176,11 +170,16 @@ p06, l-3: It took me a long time to find the definition of $I$. Perhaps you coul
 p06, "that will provide enough" -> "that provide enough"
 p07 : "n first component" -> "first n components"
 p07 : "the last y variable" -> "the variable y at the end"
+p07 Def. 20 in A^\inf = ... N is used instead of \mathbb{N}
 p09 and following: acceptation -> acceptance
 p09 independance -> independence
 p10: "Actually, this results stands for the complementary" -> "Actually, this result stands for the complements"
 p10: complementary -> complement
 p11 Code of the algorithm in the proof of Lemma 38: "pick a term t" ->  "pick a term v"
+p11 "nilpotent" -> "being nilpotent"
+p12 "multi-heads Turing Machine" -> "multi-head Turing Machine"
+p15 It is not good to use "fuer" when "f\"ur" works.
+p15 [10] is in LNCS series.
 
 ******
 À discuter : 
